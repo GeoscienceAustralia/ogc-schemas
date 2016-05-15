@@ -14,6 +14,9 @@
     <properties>
         <java.version>1.8</java.version>
         <java.version>1.8</java.version>
+        <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
+        <!-- <checker.version>2.0.0</checker.version> -->
+        <checker.version>1.9.13</checker.version>
     </properties>
     <dependencies>
         <dependency>
@@ -45,6 +48,22 @@
             <artifactId>commons-beanutils</artifactId>
             <version>1.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>${checker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker</artifactId>
+            <version>${checker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>jdk8</artifactId>
+            <version>${checker.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>install</defaultGoal>
@@ -56,6 +75,12 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <annotationProcessors>
+                        <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
+                    </annotationProcessors>
+                    <compilerArgs>
+                        <arg>-Xbootclasspath/p:${annotatedJdk}</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
