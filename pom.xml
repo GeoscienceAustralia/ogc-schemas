@@ -116,6 +116,9 @@
         <module>om/2.0</module>
         <module>gml/3.2.1</module>
         <module>geodesyml/0.3</module>
+        <module>ows/1.1.0</module>
+        <module>filter/2.0</module>
+        <module>wfs/2.0</module>
         <module>scripts</module>
 	</modules>
 	<profiles>
