@@ -2,7 +2,7 @@ language: nix
 script: "./travis/build.sh"
 branches:
     only:
-    - master
+    - geodesyml
 env:
   global:
   - secure: gkqzV2284lTx+28JW8Ca2Qv6loBwwRNeebo3Nd9m4NXqsrWad1wyl9eHZshPi7pL797VxVoQdS9xRbSATq2VcyJtI8cbA+VwGhXEH1oODmfEvYaYgHSFxVaTrqIsSdDcheZF65YnNJevqomq8i7Mr/HVG91AtSui4p0wW/SQpdEK0vWx5oC7H5FXnXMEfpBEBt5bVWk66rupmuFrEurun39wQKbJeBWogIa3+rEJz0980SMTNOZQYHNVIFR+pjFqtFcNJ536Fr2bEOyH2aCbrQ8AzBaZvUliID0kdgqV75D6lhluwn+JbCIFMsFuBCa7MrGQQrj1eDCkpeZjmJaAQN2g1egUjfpLkvE8/MywGlfmks22EjzA9GgHzhrhY7MTKTbozNR+CjROyjg+jimhZM0k81Tdb46V6pHecjoFF1s630Nt0UIwMYZlkYYXj4FxYBEILlzXqpENFPnVkAZcXKjADN7jNh7dwcGJpBUNgPzpy+OY4rseJ8OAts4I6HzU26F9me5+VspRCyFXVVMnvDyjN5/AONwtWGOe4ePj8qMWMyYf7oyHhvnJ+uZHfDQCLN4AI++F2+3kaAYZ/OfGFb8oJ3rJed5u1HiX0K0Ao9luVfXbBq+EreFq1A5H3KfNzkHu0F03lDHXtn5r3zleP0jZITJVOtqPMxpO0O64KQ4=
