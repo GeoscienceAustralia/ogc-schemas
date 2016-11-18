@@ -16,20 +16,25 @@
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<id>download-schemas</id>
 						<phase>generate-sources</phase>
-						<configuration>
-							<target>
-								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
-							</target>
-						</configuration>
 						<goals>
-							<goal>run</goal>
+							<goal>wget</goal>
 						</goals>
+						<configuration>
+							<url>http://schemas.opengis.net/${schemas.zip}</url>
+							<outputDirectory>src/main/etc</outputDirectory>
+						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
 					<execution>
 						<id>unpack</id>
 						<phase>generate-sources</phase>
