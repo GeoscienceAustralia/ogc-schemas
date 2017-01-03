@@ -1,5 +1,8 @@
 {
 	"name": "ogc-schemas",
+	"publishConfig": {
+		"registry": "https://nexus.gadevs.ga./repository/npm-snapshot/"
+	},
 	"version": "2.6.2-SNAPSHOT",
 	"description": "Jsonix XML-JSON mappings for OGC Schemas.",
 	"keywords": [
