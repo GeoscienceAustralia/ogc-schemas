@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <name>OGC GeodesyML 0.3</name>
     <parent>
-        <groupId>org.jvnet.ogc</groupId>
+        <groupId>au.gov.ga.geodesy</groupId>
         <artifactId>ogc-schema-parent</artifactId>
         <version>2.6.2-SNAPSHOT</version>
         <relativePath>../../schema-parent/pom.xml</relativePath>
@@ -21,24 +21,28 @@
             <artifactId>xlink-v_1_0</artifactId>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jvnet.ogc</groupId>
             <artifactId>gml-v_3_2_1</artifactId>
-            <version>${project.version}</version>
+            <version>2.6.1</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jvnet.ogc</groupId>
             <artifactId>om-v_2_0</artifactId>
-            <version>${project.version}</version>
+            <version>2.6.1</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.jvnet.ogc</groupId>
             <artifactId>iso19139-v_20070417</artifactId>
-            <version>${project.version}</version>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hisrc.w3c</groupId>
+            <artifactId>w3c-schemas</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.5</version>
         </dependency>
         <dependency>
             <groupId>commons-beanutils</groupId>
@@ -86,34 +90,34 @@
                     <bindings>
                         <binding>
                             <dependencyResource>
-                                <groupId>${project.groupId}</groupId>
+                                <groupId>org.jvnet.ogc</groupId>
                                 <artifactId>ogc-schemas</artifactId>
                                 <resource>ogc/globalBindings.xjb</resource>
-                                <version>${project.version}</version>
+                                <version>2.6.1</version>
                             </dependencyResource>
                         </binding>
                         <binding>
                             <dependencyResource>
-                                <groupId>${project.groupId}</groupId>
+                                <groupId>org.jvnet.ogc</groupId>
                                 <artifactId>gml-v_3_2_1</artifactId>
                                 <resource>gml-v_3_2_1.jsonix.xjb</resource>
-                                <version>${project.version}</version>
+                                <version>2.6.1</version>
                             </dependencyResource>
                         </binding>
                         <binding>
                             <dependencyResource>
-                                <groupId>${project.groupId}</groupId>
+                                <groupId>org.jvnet.ogc</groupId>
                                 <artifactId>om-v_2_0</artifactId>
                                 <resource>om-v_2_0.jsonix.xjb</resource>
-                                <version>${project.version}</version>
+                                <version>2.6.1</version>
                             </dependencyResource>
                         </binding>
                         <binding>
                             <dependencyResource>
-                                <groupId>${project.groupId}</groupId>
+                                <groupId>org.jvnet.ogc</groupId>
                                 <artifactId>iso19139-v_20070417</artifactId>
                                 <resource>iso19139-v_20070417.jsonix.xjb</resource>
-                                <version>${project.version}</version>
+                                <version>2.6.1</version>
                             </dependencyResource>
                         </binding>
                         <binding>

@@ -5,78 +5,16 @@
 	<packaging>jar</packaging>
 	<name>OGC Schemas</name>
 	<parent>
-		<groupId>org.jvnet.ogc</groupId>
+		<groupId>au.gov.ga.geodesy</groupId>
 		<artifactId>ogc-schemas-project</artifactId>
 		<version>2.6.2-SNAPSHOT</version>
 	</parent>
-	<properties>
-		<schemas.zip>SCHEMAS_OPENGIS_NET.zip</schemas.zip>
-	</properties>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<groupId>com.googlecode.maven-download-plugin</groupId>
-				<artifactId>download-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>download-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>wget</goal>
-						</goals>
-						<configuration>
-							<url>http://schemas.opengis.net/${schemas.zip}</url>
-							<outputDirectory>src/main/etc</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
-					<execution>
-						<id>unpack</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<target>
-								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-									<patternset>
-										<exclude name="**/*.zip"/>
-									</patternset>
-								</unzip>
-								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-									<patternset>
-										<include name="eop/eop-1_0_0.zip"/>
-									</patternset>
-								</unzip>
-								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
-								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
-								<move file="${basedir}/src/main/resources-original/ogc/eop/1.0.0" tofile="src/main/resources-original/ogc/eop/1.0"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-					<!--execution>
-						<id>unpack-eop</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<target>
-								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-									<patternset>
-										<include name="eop/eop-1_0_0.zip"/>
-									</patternset>
-								</unzip>
-								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
-								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution-->
 					<execution>
 						<id>copy-original-resources</id>
 						<phase>generate-sources</phase>
@@ -92,35 +30,6 @@
 						<goals>
 							<goal>run</goal>
 						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-patch-plugin</artifactId>
-				<version>1.1.1</version>
-				<configuration>
-					<skipApplication>false</skipApplication>
-				</configuration>
-				<executions>
-					<execution>
-						<id>patch-sources</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>apply</goal>
-						</goals>
-						<configuration>
-							<patchDirectory>src/main/patches/</patchDirectory>
-							<targetDirectory>src/main/resources</targetDirectory>
-							<patches>
-								<patch>ogc.patch</patch>
-								<patch>geoserver.patch</patch>
-							</patches>
-							<optimizations>false</optimizations>
-							<!--patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile-->
-							<naturalOrderProcessing>true</naturalOrderProcessing>
-							<ignoreWhitespace>true</ignoreWhitespace>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>

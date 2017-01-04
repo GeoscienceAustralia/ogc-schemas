@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 	<name>OGC Schema Parent</name>
 	<parent>
-		<groupId>org.jvnet.ogc</groupId>
+		<groupId>au.gov.ga.geodesy</groupId>
 		<artifactId>ogc-schemas-project</artifactId>
 		<version>2.6.2-SNAPSHOT</version>
 	</parent>
@@ -59,28 +59,28 @@
 						<bindings>
 							<binding>
 								<dependencyResource>
-									<groupId>${project.groupId}</groupId>
+									<groupId>org.jvnet.ogc</groupId>
 									<artifactId>ogc-schemas</artifactId>
 									<resource>ogc/globalBindings.xjb</resource>
-									<version>${project.version}</version>
+									<version>2.6.1</version>
 								</dependencyResource>
 							</binding>
 						</bindings>
 						<catalogs>
 							<catalog>
 								<dependencyResource>
-									<groupId>${project.groupId}</groupId>
+									<groupId>org.jvnet.ogc</groupId>
 									<artifactId>ogc-schemas</artifactId>
 									<resource>ogc/catalog.cat</resource>
-									<version>${project.version}</version>
+									<version>2.6.1</version>
 								</dependencyResource>
 							</catalog>
 							<catalog>
 								<dependencyResource>
-									<groupId>${project.groupId}</groupId>
+									<groupId>org.jvnet.ogc</groupId>
 									<artifactId>ogc-schemas</artifactId>
 									<resource>geoserver/catalog.cat</resource>
-									<version>${project.version}</version>
+									<version>2.6.1</version>
 								</dependencyResource>
 							</catalog>
 							<catalog>

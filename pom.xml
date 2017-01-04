@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jvnet.ogc</groupId>
+	<groupId>au.gov.ga.geodesy</groupId>
 	<artifactId>ogc-schemas-project</artifactId>
 	<version>2.6.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -58,63 +58,8 @@
 		<url>https://github.com/highsource/ogc-schemas</url>
 	</scm>
 	<modules>
-		<!-- Schemas -->
-        <!--
-		<module>schemas</module>
-		<module>schema-parent</module>
-		<module>dtd-parent</module>
-		<module>arml</module>
-		<module>citygml</module>
-		<module>context</module>
-		<module>csw</module>
-		<module>eop</module>
-		<module>eosps</module>
-		<module>filter</module>
-		<module>gml</module>
-		<module>gmlcov</module>
-		<module>gmljp2</module>
-		<module>ic</module>
-		<module>indoorgml</module>
-		<module>iso19139</module>
-		<module>iso19139-2</module>
-		<module>kml</module>
-		<module>ols</module>
-		<module>om</module>
-		<module>omeo</module>
-		<module>omx</module>
-		<module>oseo</module>
-		<module>owc</module>
-		<module>ows</module>
-		<module>sampling</module>
-		<module>samplingSpatial</module>
-		<module>samplingSpecimen</module>
-		<module>se</module>
-		<module>sensorML</module>
-		<module>sld</module>
-		<module>sos</module>
-		<module>sps</module>
-		<module>sweCommon</module>
-		<module>swes</module>
-		<module>tjs</module>
-		<module>tml</module>
-		<module>wami</module>
-		<module>waterml</module>
-		<module>wcps</module>
-		<module>wcs</module>
-		<module>wcst</module>
-		<module>wfs</module>
-		<module>wms</module>
-		<module>wmsc</module>
-		<module>wmts</module>
-		<module>wps</module>
-		<module>xal</module>
-		<module>dist</module>
-        -->
         <module>schemas</module>
         <module>schema-parent</module>
-        <module>iso19139/20070417</module>
-        <module>om/2.0</module>
-        <module>gml/3.2.1</module>
         <module>geodesyml/0.3</module>
         <module>scripts</module>
 	</modules>
@@ -190,6 +135,11 @@
 				<groupId>javax.xml.bind</groupId>
 				<artifactId>jaxb-api</artifactId>
 				<version>${jaxb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jvnet.ogc</groupId>
+				<artifactId>ogc-schemas</artifactId>
+				<version>2.6.1</version>
 			</dependency>
 			<dependency>
 				<groupId>org.hisrc.w3c</groupId>
