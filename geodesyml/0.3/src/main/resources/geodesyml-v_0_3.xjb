@@ -16,6 +16,11 @@
     </jaxb:bindings>
 
     <jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.3/equipment.xsd" node="/xs:schema">
+        <jaxb:bindings multiple="true" node="//*[@type='double']">
+            <jaxb:property>
+                <jaxb:baseType name="java.lang.Double"/>
+            </jaxb:property>
+        </jaxb:bindings>
         <jaxb:bindings multiple="true" node="//xs:complexType[substring(@name, string-length(@name) - string-length('PropertyType') + 1) = 'PropertyType']">
             <inheritance:implements>au.gov.ga.geodesy.support.gml.GMLPropertyType</inheritance:implements>
         </jaxb:bindings>
