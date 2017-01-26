@@ -43,7 +43,7 @@
                 <executions>
                     <execution>
                         <id>copy-original-resources</id>
-                        <phase>generate-sources</phase>
+                        <phase>generate-resources</phase>
                         <configuration>
                             <target>
                                 <copy todir="${basedir}/src/main/resources" overwrite="true">
