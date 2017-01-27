@@ -9,6 +9,12 @@
         <artifactId>ogc-schemas-project</artifactId>
         <version>2.6.2-SNAPSHOT</version>
     </parent>
+    <repositories>
+        <repository>
+			<id>nexus.gadevs</id>
+			<url>https://nexus.gadevs.ga/repository/maven-snapshots/</url>
+        </repository>
+    </repositories>
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
