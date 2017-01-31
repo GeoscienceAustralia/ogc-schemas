@@ -11,7 +11,7 @@
         <version>2.6.2-SNAPSHOT</version>
     </parent>
     <modules>
-        <module>0.3</module>
+        <module>0.4</module>
     </modules>
     <build>
         <defaultGoal>install</defaultGoal>
