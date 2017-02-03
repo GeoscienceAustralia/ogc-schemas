@@ -134,6 +134,20 @@
 							</arguments>
 						</configuration>
 					</execution>
+                    <execution>
+                        <id>pack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>pack</argument>
+                                <argument>.</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>					
 				</executions>
 			</plugin>
 		</plugins>

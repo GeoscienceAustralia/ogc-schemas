@@ -1,1 +1,1 @@
-module.exports.GEODESYML_0_3         = require('./lib/GEODESYML_0_3'                ).GEODESYML_0_3        ;
+module.exports.GEODESYML_0_4         = require('./lib/GEODESYML_0_4'                ).GEODESYML_0_4        ;

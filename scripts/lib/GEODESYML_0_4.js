@@ -1535,12 +1535,12 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LocalEpisodicEventsPropertyType',
-        tn: 'localEpisodicEventsPropertyType',
+        ln: 'LocalEpisodicEffectPropertyType',
+        tn: 'localEpisodicEffectPropertyType',
         ps: [{
-            n: 'localEpisodicEvents',
+            n: 'localEpisodicEffect',
             rq: true,
-            ti: '.LocalEpisodicEventsType'
+            ti: '.LocalEpisodicEffectType'
           }, {
             n: 'dateInserted',
             rq: true,
@@ -2847,10 +2847,10 @@ var GEODESYML_0_4_Module_Factory = function () {
             col: true,
             ti: '.SignalObstructionsPropertyType'
           }, {
-            n: 'localEpisodicEventsSet',
+            n: 'localEpisodicEffects',
             mno: 0,
             col: true,
-            ti: '.LocalEpisodicEventsPropertyType'
+            ti: '.LocalEpisodicEffectPropertyType'
           }, {
             n: 'siteOwner',
             ti: '.AgencyPropertyType'
@@ -5293,8 +5293,8 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'LocalEpisodicEventsType',
-        tn: 'localEpisodicEventsType',
+        ln: 'LocalEpisodicEffectType',
+        tn: 'localEpisodicEffectType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
             n: 'validTime',
@@ -6701,8 +6701,8 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'localEpisodicEvents',
-        ti: '.LocalEpisodicEventsType',
+        en: 'localEpisodicEffect',
+        ti: '.LocalEpisodicEffectType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'

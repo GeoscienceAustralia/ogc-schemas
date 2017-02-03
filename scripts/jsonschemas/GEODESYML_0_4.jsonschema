@@ -5143,24 +5143,24 @@
                 "uomLabels"
             ]
         },
-        "LocalEpisodicEventsPropertyType":{
+        "LocalEpisodicEffectPropertyType":{
             "type":"object",
-            "title":"LocalEpisodicEventsPropertyType",
+            "title":"LocalEpisodicEffectPropertyType",
             "required":[
-                "localEpisodicEvents",
+                "localEpisodicEffect",
                 "dateInserted"
             ],
             "properties":{
-                "localEpisodicEvents":{
-                    "title":"localEpisodicEvents",
+                "localEpisodicEffect":{
+                    "title":"localEpisodicEffect",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LocalEpisodicEventsType"
+                            "$ref":"#/definitions/LocalEpisodicEffectType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"localEpisodicEvents",
+                        "localPart":"localEpisodicEffect",
                         "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
                     }
                 },
@@ -5326,11 +5326,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"localEpisodicEventsPropertyType",
+                "localPart":"localEpisodicEffectPropertyType",
                 "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
             },
             "propertiesOrder":[
-                "localEpisodicEvents",
+                "localEpisodicEffect",
                 "dateInserted",
                 "dateDeleted",
                 "deletedReason",
@@ -9504,20 +9504,20 @@
                                 "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
                             }
                         },
-                        "localEpisodicEventsSet":{
-                            "title":"localEpisodicEventsSet",
+                        "localEpisodicEffects":{
+                            "title":"localEpisodicEffects",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/LocalEpisodicEventsPropertyType"
+                                        "$ref":"#/definitions/LocalEpisodicEffectPropertyType"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"localEpisodicEventsSet",
+                                "localPart":"localEpisodicEffects",
                                 "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
                             }
                         },
@@ -9645,7 +9645,7 @@
                 "radioInterferencesSet",
                 "multipathSourcesSet",
                 "signalObstructionsSet",
-                "localEpisodicEventsSet",
+                "localEpisodicEffects",
                 "siteOwner",
                 "siteContact",
                 "siteMetadataCustodian",
@@ -17974,7 +17974,7 @@
                 "extension"
             ]
         },
-        "LocalEpisodicEventsType":{
+        "LocalEpisodicEffectType":{
             "required":[
                 "validTime",
                 "event"
@@ -17985,7 +17985,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"LocalEpisodicEventsType",
+                    "title":"LocalEpisodicEffectType",
                     "properties":{
                         "validTime":{
                             "title":"validTime",
@@ -18018,7 +18018,7 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"localEpisodicEventsType",
+                "localPart":"localEpisodicEffectType",
                 "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
             },
             "propertiesOrder":[
@@ -25665,7 +25665,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "localEpisodicEvents"
+                                        "localEpisodicEffect"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -25678,11 +25678,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LocalEpisodicEventsType"
+                    "$ref":"#/definitions/LocalEpisodicEffectType"
                 }
             },
             "elementName":{
-                "localPart":"localEpisodicEvents",
+                "localPart":"localEpisodicEffect",
                 "namespaceURI":"urn:xml-gov-au:icsm:egeodesy:0.4"
             }
         },
