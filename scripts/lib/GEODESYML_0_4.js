@@ -3,331 +3,116 @@ var GEODESYML_0_4_Module_Factory = function () {
     n: 'GEODESYML_0_4',
     dens: 'urn:xml-gov-au:icsm:egeodesy:0.4',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0', 'ISO19139_GCO_20070417', 'ISO19139_GMD_20070417', 'OM_2_0'],
+    deps: ['ISO19139_GCO_20070417', 'XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417', 'OM_2_0'],
     tis: [{
-        ln: 'NodeType',
+        ln: 'DynamicTransformationType',
+        bti: 'GML_3_2_1.AbstractGeneralTransformationType',
+        ps: [{
+            n: 'sourceEpoch',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'targetEpoch',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'usesMethod',
+            rq: true,
+            ti: 'GML_3_2_1.OperationMethodType'
+          }, {
+            n: 'parameterValue',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'parameterValue',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractGeneralParameterValuePropertyType',
+            t: 'er'
+          }, {
+            n: 'source',
+            mno: 0,
+            col: true,
+            ti: '.AbstractDefinitionSourcePropertyType'
+          }]
+      }, {
+        ln: 'AbstractTimeSliceType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'status',
-            en: 'Status',
-            ti: '.FeatureStatusType'
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
           }, {
-            n: 'aggregationType',
+            n: 'dataSource',
+            en: {
+              lp: 'dataSource',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.StringOrRefType'
+          }]
+      }, {
+        ln: 'FeatureStatusType',
+        ps: [{
+            n: 'currentStatus',
+            rq: true,
+            ti: '.FeatureStatusInstanceType'
+          }, {
+            n: 'history',
+            ti: '.FeatureStatusType.History'
+          }]
+      }, {
+        ln: 'MonumentType',
+        bti: '.AbstractMonumentType',
+        ps: [{
+            n: 'inscription',
+            rq: true
+          }, {
+            n: 'monumentDescription',
             rq: true,
             ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'validTime',
+            n: 'height',
             rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+            ti: '.SingleValueType'
           }, {
-            n: 'atSite',
+            n: 'foundation',
             rq: true,
-            col: true,
-            ti: '.SitePropertyType'
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SingleValueType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'confidence',
-            an: {
-              lp: 'confidence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SurveyedLocalTieType.DifferentialComponentsGNSSMarkerToTiedMonumentITRS',
-        tn: null,
-        ps: [{
-            n: 'dx',
+            n: 'foundationDepth',
             rq: true,
-            ti: 'Double'
+            ti: '.SingleValueType'
           }, {
-            n: 'dy',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'dz',
-            rq: true,
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'AbstractSourcePropertyType',
-        ps: [{
-            n: 'abstractSource',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractSource',
-            ti: '.AbstractSourceType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LocalEpisodicEffectType',
-        tn: 'localEpisodicEffectType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'event',
+            n: 'markerDescription',
             rq: true
-          }]
-      }, {
-        ln: 'ProjectType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'status',
-            ti: 'GML_3_2_1.CodeType'
           }, {
-            n: 'managedBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'specifiedBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'initiatedDate',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'completedDate',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractGNSSReceiverType',
-        bti: '.BaseGeodeticEquipmentType',
-        ps: [{
-            n: 'igsModelCode',
-            ti: '.IgsReceiverModelCodeType'
-          }]
-      }, {
-        ln: 'TransformedMeasurementType',
-        tn: 'transformedMeasurementType',
-        ps: [{
-            n: 'abstractMeasurement',
+            n: 'geologicCharacteristic',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMeasurement',
-            ti: 'GML_3_2_1.AbstractFeatureType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'PublishedStreamType',
-        tn: 'publishedStreamType',
-        ps: [{
-            n: 'agency',
-            ti: '.AgencyPropertyType'
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'dataStream',
-            mno: 0,
-            col: true,
-            ti: '.BaseDataStreamType'
-          }]
-      }, {
-        ln: 'GridTransformationType',
-        bti: '.DynamicTransformationType',
-        ps: [{
-            n: 'rectifiedGridCoverage',
+            n: 'bedrockType',
             rq: true,
-            en: {
-              lp: 'RectifiedGridCoverage',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DiscreteCoverageType'
-          }]
-      }, {
-        ln: 'WaterVaporSensorPropertyType',
-        tn: 'waterVaporSensorPropertyType',
-        ps: [{
-            n: 'waterVaporSensor',
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
+          }, {
+            n: 'bedrockCondition',
             rq: true,
-            en: 'WaterVaporSensor',
-            ti: '.WaterVaporSensorType'
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'dateInserted',
+            n: 'fractureSpacing',
             rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MeasurementPointCovarianceType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'atPoint',
+            n: 'faultZonesNearby',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }, {
-            n: 'toPoint',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'abstractQuality',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AdjustedPositionType',
-        tn: 'adjustedPositionType',
-        ps: [{
-            n: 'usesPosition',
-            rq: true,
-            ti: '.PositionPropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
+            n: 'distanceActivity',
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
           }]
       }, {
         ln: 'GnssReceiverPropertyType',
@@ -388,111 +173,54 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DirectVelocityType',
+        ln: 'AbstractMeasurementSourceType',
+        bti: '.AbstractSourceType',
         ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
+            n: 'operation',
+            rq: true,
+            ti: '.MeasurementOperationPropertyType'
           }]
       }, {
-        ln: 'ZenithDistanceType',
+        ln: 'DirectionSetType',
         bti: '.AbstractMeasurementType',
         ps: [{
-            n: 'zenithDistance',
+            n: 'direction',
             rq: true,
+            col: true,
             ti: '.MeasurementLineType'
+          }, {
+            n: 'directionPairQuality',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementLineCovarianceType'
           }]
       }, {
-        ln: 'GnssAntennaType',
-        bti: '.AbstractGNSSAntennaType',
+        ln: 'GnssReceiverConfigType',
+        tn: 'gnssReceiverConfigType',
         ps: [{
-            n: 'antennaType',
-            rq: true,
-            ti: '.IgsAntennaModelCodeType'
-          }, {
-            n: 'serialNumber',
-            rq: true
-          }, {
-            n: 'antennaReferencePoint',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'markerArpUpEcc',
-            rq: true,
-            en: 'marker-arpUpEcc.',
-            ti: 'Double'
-          }, {
-            n: 'markerArpNorthEcc',
-            rq: true,
-            en: 'marker-arpNorthEcc.',
-            ti: 'Double'
-          }, {
-            n: 'markerArpEastEcc',
-            rq: true,
-            en: 'marker-arpEastEcc.',
-            ti: 'Double'
-          }, {
-            n: 'alignmentFromTrueNorth',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'antennaRadomeType',
-            rq: true,
-            ti: '.IgsRadomeModelCodeType'
-          }, {
-            n: 'radomeSerialNumber',
-            rq: true
-          }, {
-            n: 'antennaCableType',
-            rq: true
-          }, {
-            n: 'antennaCableLength',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'dateInstalled',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateRemoved',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
+            n: 'satelliteSystemOrFirmwareVersionOrElevationCutoff',
+            mno: 0,
+            mxo: 6,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'temperatureStabilization'
+              }, {
+                en: 'nativeBaudRateInBPS',
+                ti: 'Decimal'
+              }, {
+                en: 'sampleIntervalInSeconds',
+                ti: 'Decimal'
+              }, {
+                en: 'elevationCutoff'
+              }, {
+                en: 'firmwareVersion'
+              }, {
+                en: 'satelliteSystem',
+                ti: 'GML_3_2_1.CodeListType'
+              }],
+            t: 'ers'
           }]
       }, {
         ln: 'SiteCertificateType',
@@ -529,15 +257,12 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: '.DocumentPropertyType'
           }]
       }, {
-        ln: 'DefinitionOperationPropertyType',
+        ln: 'TerrestrialReferenceFramePropertyType',
         ps: [{
-            n: 'abstractDefinitionOperation',
+            n: 'terrestrialReferenceFrame',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDefinitionOperation',
-            ti: '.AbstractDefinitionOperationType',
-            t: 'er'
+            en: 'TerrestrialReferenceFrame',
+            ti: '.TerrestrialReferenceFrameType'
           }, {
             n: 'nilReason',
             ti: {
@@ -580,79 +305,34 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractPositionEstimatorType',
-        bti: 'GML_3_2_1.AbstractCoordinateOperationType'
-      }, {
-        ln: 'TransformedPositionType',
-        tn: 'transformedPositionType',
+        ln: 'TransformationType',
+        bti: '.AbstractPositionSourceType',
         ps: [{
-            n: 'position',
-            rq: true,
-            en: 'Position',
-            ti: '.PositionType'
-          }]
-      }, {
-        ln: 'PositionTimeSliceType',
-        bti: 'GML_3_2_1.AbstractGeometricPrimitiveType',
-        ps: [{
-            n: 'status',
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'coordinates',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionType'
-          }, {
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'dataSource',
-            en: {
-              lp: 'dataSource',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.StringOrRefType'
-          }, {
-            n: 'hasVelocity',
-            ti: '.PositionTimeSliceType.HasVelocity'
-          }, {
-            n: 'abstractQuality',
+            n: 'rest',
             rq: true,
             col: true,
             mx: false,
             dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'source',
-            ti: '.AbstractPositionSourcePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AstronomicAzimuthType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'azimuth',
-            rq: true,
-            ti: '.MeasurementLineType'
+            etis: [{
+                en: 'version'
+              }, {
+                en: 'associatedDocument',
+                ti: '.DocumentPropertyType'
+              }, {
+                en: 'notes'
+              }, {
+                en: 'status',
+                ti: 'GML_3_2_1.CodeType'
+              }, {
+                en: 'epoch',
+                ti: 'GML_3_2_1.TimePositionType'
+              }, {
+                en: 'extension',
+                ti: 'AnyType'
+              }],
+            t: 'ers'
           }, {
             n: 'srsName',
-            rq: true,
             an: {
               lp: 'srsName'
             },
@@ -686,22 +366,125 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RadioInterferencePropertyType',
-        tn: 'radioInterferencePropertyType',
+        ln: 'AdjustedPositionType',
+        tn: 'adjustedPositionType',
         ps: [{
-            n: 'radioInterference',
+            n: 'usesPosition',
             rq: true,
-            en: 'RadioInterference',
-            ti: '.RadioInterferenceType'
+            ti: '.PositionPropertyType'
           }, {
-            n: 'dateInserted',
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TransformationMeasurementType',
+        tn: 'transformationMeasurementType',
+        ps: [{
+            n: 'abstractMeasurement',
             rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
+            mx: false,
+            dom: false,
+            en: 'AbstractMeasurement',
+            ti: 'GML_3_2_1.AbstractFeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AbstractPositionEstimatorType',
+        bti: 'GML_3_2_1.AbstractCoordinateOperationType'
+      }, {
+        ln: 'SitePropertyType',
+        ps: [{
+            n: 'site',
+            rq: true,
+            en: 'Site',
+            ti: '.SiteType'
           }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'deletedReason'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasurementPointType.Value',
+        tn: null,
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uomLabel',
+            ti: 'NCName',
+            an: {
+              lp: 'uomLabel'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InstrumentType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ProjectPropertyType',
+        ps: [{
+            n: 'project',
+            rq: true,
+            en: 'Project',
+            ti: '.ProjectType'
           }, {
             n: 'nilReason',
             ti: {
@@ -773,6 +556,228 @@ var GEODESYML_0_4_Module_Factory = function () {
             n: 'extension',
             ti: 'AnyType'
           }]
+      }, {
+        ln: 'SiteLocationType',
+        tn: 'siteLocationType',
+        ps: [{
+            n: 'city',
+            rq: true
+          }, {
+            n: 'state',
+            rq: true
+          }, {
+            n: 'countryCodeISO',
+            rq: true,
+            ti: '.CountryCodeType'
+          }, {
+            n: 'tectonicPlate',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'approximatePositionITRF',
+            rq: true,
+            ti: '.SiteLocationType.ApproximatePositionITRF'
+          }, {
+            n: 'notes',
+            rq: true
+          }]
+      }, {
+        ln: 'GeodeticLatitudeType',
+        bti: '.AstronomicLatitudeType'
+      }, {
+        ln: 'OrthometricHeightType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'orthometricHeight',
+            rq: true,
+            ti: '.MeasurementPointType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodeticPosition',
+        tn: 'geodeticPosition',
+        ps: [{
+            n: 'point',
+            rq: true,
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PointType'
+          }]
+      }, {
+        ln: 'GeodeticEquipmentItemPropertyType',
+        tn: 'geodeticEquipmentItemPropertyType',
+        ps: [{
+            n: 'geodeticEquipmentItem',
+            rq: true,
+            ti: '.BaseGeodeticEquipmentType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'IgsRadomeModelCodeType',
+        tn: 'igsRadomeModelCodeType',
+        bti: 'GML_3_2_1.CodeWithAuthorityType'
+      }, {
+        ln: 'AbstractDefinitionSourcePropertyType',
+        ps: [{
+            n: 'abstractDefinitionSource',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDefinitionSource',
+            ti: '.AbstractDefinitionSourceType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureStatusInstanceType',
+        ps: [{
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'statusCode',
+            rq: true,
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'SensorWithCodeType',
+        bti: '.SensorType'
       }, {
         ln: 'PositionType',
         bti: 'GML_3_2_1.AbstractFeatureType',
@@ -865,6 +870,278 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AdjustedMeasurementType',
+        tn: 'adjustedMeasurementType',
+        ps: [{
+            n: 'atLine',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'atPoint',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'adjustmentValue',
+            rq: true,
+            col: true,
+            ti: '.ValueType'
+          }]
+      }, {
+        ln: 'DataStreamPropertyType',
+        tn: 'dataStreamPropertyType',
+        ps: [{
+            n: 'dataStream',
+            rq: true,
+            ti: '.DataStreamType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SiteIdentificationType',
+        tn: 'siteIdentificationType',
+        ps: [{
+            n: 'siteName',
+            rq: true
+          }, {
+            n: 'fourCharacterID',
+            rq: true
+          }, {
+            n: 'monumentNumber',
+            ti: 'Integer'
+          }, {
+            n: 'receiverNumber',
+            ti: 'Integer'
+          }, {
+            n: 'monumentInscription'
+          }, {
+            n: 'iersDOMESNumber',
+            rq: true
+          }, {
+            n: 'cdpNumber',
+            rq: true
+          }, {
+            n: 'monumentDescription',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'heightOfTheMonument',
+            ti: 'Double'
+          }, {
+            n: 'monumentFoundation'
+          }, {
+            n: 'foundationDepth',
+            ti: 'Double'
+          }, {
+            n: 'markerDescription'
+          }, {
+            n: 'dateInstalled',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'geologicCharacteristic',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'bedrockType'
+          }, {
+            n: 'bedrockCondition'
+          }, {
+            n: 'fractureSpacing'
+          }, {
+            n: 'faultZonesNearby',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'distanceActivity',
+            en: 'distance-Activity'
+          }, {
+            n: 'notes'
+          }]
+      }, {
+        ln: 'AdjustedPositionQualityType',
+        tn: 'adjustedPositionQualityType',
+        ps: [{
+            n: 'atPosition',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'toPosition',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'value',
+            rq: true,
+            ti: '.ValueType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'PositionEstimatorProcessType',
+        bti: '.AbstractPositionEstimatorType',
+        ps: [{
+            n: 'processStep',
+            rq: true,
+            col: true,
+            ti: '.PositionEstimatorProcessType.ProcessStep'
+          }, {
+            n: 'dimension',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AstronomicLatitudeType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'latitude',
+            rq: true,
+            ti: '.MeasurementPointType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGNSSAntennaType',
+        bti: '.BaseGeodeticEquipmentType',
+        ps: [{
+            n: 'igsModelCode',
+            ti: '.IgsAntennaModelCodeType'
+          }]
+      }, {
+        ln: 'TransformedPositionType',
+        tn: 'transformedPositionType',
+        ps: [{
+            n: 'position',
+            rq: true,
+            en: 'Position',
+            ti: '.PositionType'
+          }]
+      }, {
+        ln: 'AbstractMeasurementSourcePropertyType',
+        ps: [{
+            n: 'abstractMeasurementSource',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMeasurementSource',
+            ti: '.AbstractMeasurementSourceType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'VCV3X3Type',
         tn: 'VCV3x3Type',
         ps: [{
@@ -910,6 +1187,55 @@ var GEODESYML_0_4_Module_Factory = function () {
             n: 'confidence',
             an: {
               lp: 'confidence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GNSSBaselineClusterType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'baseline',
+            rq: true,
+            col: true,
+            en: 'Baseline',
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'baselinePairQuality',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementLineCovarianceType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
             },
             t: 'a'
           }]
@@ -972,10 +1298,66 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RelativeOffsetType',
-        bti: '.ValueType',
+        ln: 'ObservationQualityPropertyType',
         ps: [{
+            n: 'abstractObservationQuality',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractObservationQuality',
+            ti: '.AbstractObservationQualityType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodeticAzimuthType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'azimuth',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
             n: 'srsName',
+            rq: true,
             an: {
               lp: 'srsName'
             },
@@ -987,6 +1369,87 @@ var GEODESYML_0_4_Module_Factory = function () {
               lp: 'srsDimension'
             },
             t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EllipsoidChordDistanceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'distance',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BasePossibleProblemSourceType',
+        tn: 'basePossibleProblemSourceType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'possibleProblemSource',
+            rq: true
+          }, {
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'notes',
+            rq: true
           }]
       }, {
         ln: 'CollocationInformationType',
@@ -1019,128 +1482,149 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'GeodesyMLType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'AbstractMeasurementOperationType',
+        bti: 'GML_3_2_1.IdentifiedObjectType',
         ps: [{
-            n: 'validTime',
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+            n: 'reductionMethod',
+            en: 'ReductionMethod'
           }, {
-            n: 'elements',
+            n: 'procedure',
+            ti: 'OM_2_0.OMProcessPropertyType'
+          }]
+      }, {
+        ln: 'MeasurementLineType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'atSetup',
+            ti: '.SetupPropertyType'
+          }, {
+            n: 'toSetup',
+            ti: '.SetupPropertyType'
+          }, {
+            n: 'atNode',
             rq: true,
+            ti: '.NodePropertyType'
+          }, {
+            n: 'atHeight',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'toNode',
+            rq: true,
+            ti: '.NodePropertyType'
+          }, {
+            n: 'toHeight',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'value',
+            rq: true,
+            ti: '.MeasurementLineType.Value'
+          }, {
+            n: 'abstractQuality',
+            mno: 0,
             col: true,
             mx: false,
             dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'HorizontalAngleType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'base',
+            rq: true,
+            ti: '.MeasurementPointType'
+          }, {
+            n: 'angle',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }]
+      }, {
+        ln: 'RadioInterferenceType',
+        tn: 'radioInterferenceType',
+        bti: '.BasePossibleProblemSourceType',
+        ps: [{
+            n: 'observedDegradation',
+            rq: true
+          }]
+      }, {
+        ln: 'InterpolatedSingleValueType',
+        bti: '.AbstractTimeSliceType',
+        ps: [{
+            n: 'status',
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'value',
+            rq: true,
+            en: 'Value',
+            ti: '.ValueType'
+          }, {
+            n: 'source',
+            ti: '.InterpolatedValueSourcePropertyType'
+          }]
+      }, {
+        ln: 'AbstractMonumentType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'type',
+            rq: true,
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
+          }, {
+            n: 'status',
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'installedBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'installedDate',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GnssAntennaConfigType',
+        tn: 'gnssAntennaConfigType',
+        ps: [{
+            n: 'antennaCableLengthMetersOrAntennaCableType',
+            mno: 0,
+            mxo: 2,
+            col: true,
             etis: [{
-                en: 'AbstractSiteLog',
-                ti: '.AbstractSiteLogType'
+                en: 'antennaCableLengthMeters',
+                ti: 'Decimal'
               }, {
-                en: 'siteVisit',
-                ti: '.SiteVisitType'
-              }, {
-                en: 'Sensor',
-                ti: '.SensorType'
-              }, {
-                en: 'TerrestrialReferenceFrame',
-                ti: '.TerrestrialReferenceFrameType'
-              }, {
-                en: 'AbstractPositionEstimator',
-                ti: '.AbstractPositionEstimatorType'
-              }, {
-                en: 'AbstractDefinitionSource',
-                ti: '.AbstractDefinitionSourceType'
-              }, {
-                en: 'AbstractPosition',
-                ti: 'GML_3_2_1.AbstractFeatureType'
-              }, {
-                en: 'Setup',
-                ti: '.SetupType'
-              }, {
-                en: 'AbstractMeasurementSource',
-                ti: '.AbstractMeasurementSourceType'
-              }, {
-                en: 'Site',
-                ti: '.SiteType'
-              }, {
-                en: 'AbstractMeasurement',
-                ti: 'GML_3_2_1.AbstractFeatureType'
-              }, {
-                en: 'AbstractPositionSource',
-                ti: '.AbstractPositionSourceType'
-              }, {
-                en: 'AbstractDefinitionOperation',
-                ti: '.AbstractDefinitionOperationType'
-              }, {
-                en: 'Document',
-                ti: '.DocumentType'
-              }, {
-                en: 'DynamicTransformation',
-                ti: '.DynamicTransformationType'
-              }, {
-                en: 'Project',
-                ti: '.ProjectType'
-              }, {
-                en: 'SupplementaryMark',
-                ti: '.SupplementaryMarkType'
-              }, {
-                en: {
-                  lp: 'AbstractCRS',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.AbstractCRSType'
-              }, {
-                en: 'AbstractMeasurementOperation',
-                ti: '.AbstractMeasurementOperationType'
-              }, {
-                en: 'Node',
-                ti: '.NodeType'
-              }, {
-                en: 'PositionPairCovariance',
-                ti: '.PositionPairCovarianceType'
-              }, {
-                en: 'Monument',
-                ti: '.MonumentType'
-              }, {
-                en: 'Instrument',
-                ti: '.InstrumentType'
+                en: 'antennaCableType'
               }],
-            t: 'ers'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
+            t: 'es'
+          }]
+      }, {
+        ln: 'SlopeDistanceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'slopeDistance',
+            rq: true,
+            ti: '.MeasurementLineType'
           }]
       }, {
         ln: 'GnssAntennaHeightMeasurementType',
@@ -1153,13 +1637,10 @@ var GEODESYML_0_4_Module_Factory = function () {
             mx: false,
             dom: false,
             etis: [{
-                en: 'type',
+                en: 'referencePoint',
                 ti: 'GML_3_2_1.CodeWithAuthorityType'
               }, {
-                en: 'dateAndTimeUTC',
-                ti: 'GML_3_2_1.TimePositionType'
-              }, {
-                en: 'referencePoint',
+                en: 'type',
                 ti: 'GML_3_2_1.CodeWithAuthorityType'
               }, {
                 en: 'value',
@@ -1170,16 +1651,147 @@ var GEODESYML_0_4_Module_Factory = function () {
                   ns: 'http:\/\/www.opengis.net\/gml\/3.2'
                 },
                 ti: 'GML_3_2_1.UnitOfMeasureType'
+              }, {
+                en: 'dateAndTimeUTC',
+                ti: 'GML_3_2_1.TimePositionType'
               }],
             t: 'ers'
           }]
       }, {
-        ln: 'AstronomicLatitudeType',
+        ln: 'BaseGeodeticEquipmentType',
+        tn: 'baseGeodeticEquipmentType',
+        bti: '.InstrumentType',
+        ps: [{
+            n: 'manufacturerName'
+          }, {
+            n: 'manufacturerModel'
+          }, {
+            n: 'manufacturerPartNumber'
+          }, {
+            n: 'manufacturerDescription'
+          }, {
+            n: 'manufacturerSerialNumber',
+            rq: true
+          }]
+      }, {
+        ln: 'AbstractSourceType.Results',
+        tn: null,
+        ps: [{
+            n: 'abstractResult',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractResult',
+            ti: 'AnyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'HumiditySensorType',
+        bti: '.BaseSensorEquipmentType',
+        ps: [{
+            n: 'dataSamplingInterval',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'accuracyPercentRelativeHumidity',
+            rq: true,
+            en: 'accuracy-percentRelativeHumidity',
+            ti: 'Double'
+          }, {
+            n: 'aspiration',
+            rq: true
+          }]
+      }, {
+        ln: 'SupplementaryMarkType',
+        bti: '.MonumentType',
+        ps: [{
+            n: 'relativeOffset',
+            mno: 0,
+            col: true,
+            ti: '.RelativeOffsetType'
+          }]
+      }, {
+        ln: 'AbstractGNSSReceiverType',
+        bti: '.BaseGeodeticEquipmentType',
+        ps: [{
+            n: 'igsModelCode',
+            ti: '.IgsReceiverModelCodeType'
+          }]
+      }, {
+        ln: 'OtherInstrumentationPropertyType',
+        tn: 'otherInstrumentationPropertyType',
+        ps: [{
+            n: 'otherInstrumentation',
+            rq: true,
+            en: 'OtherInstrumentation',
+            ti: '.OtherInstrumentationType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DynamicFeatureType',
+        bti: 'GML_3_2_1.DynamicFeatureType'
+      }, {
+        ln: 'GNSSPointClusterType',
         bti: '.AbstractMeasurementType',
         ps: [{
-            n: 'latitude',
+            n: 'point',
             rq: true,
+            col: true,
             ti: '.MeasurementPointType'
+          }, {
+            n: 'pointPairQuality',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementPointCovarianceType'
           }, {
             n: 'srsName',
             rq: true,
@@ -1213,6 +1825,105 @@ var GEODESYML_0_4_Module_Factory = function () {
             an: {
               lp: 'uomLabels'
             },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractObservationQualityType',
+        bti: '.DynamicFeatureType',
+        ps: [{
+            n: 'atSite',
+            rq: true,
+            ti: '.SitePropertyType'
+          }, {
+            n: 'source',
+            ti: '.ObservationQualitySourcePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'RelativeOffsetType',
+        bti: '.ValueType',
+        ps: [{
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DeformationGridTransformationType',
+        bti: '.GridTransformationType'
+      }, {
+        ln: 'SignalObstructionPropertyType',
+        tn: 'signalObstructionPropertyType',
+        ps: [{
+            n: 'signalObstruction',
+            rq: true,
+            en: 'SignalObstruction',
+            ti: '.BasePossibleProblemSourceType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -1257,15 +1968,105 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'DeformationGridTransformationType',
-        bti: '.GridTransformationType'
-      }, {
-        ln: 'GeodeticMonumentPropertyType',
-        tn: 'geodeticMonumentPropertyType',
+        ln: 'VCV2X2Type',
+        tn: 'VCV2x2Type',
         ps: [{
-            n: 'geodeticMonument',
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'codeSpace',
             rq: true,
-            ti: '.BaseGeodeticMonumentType'
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'confidence',
+            an: {
+              lp: 'confidence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDefinitionSourceType',
+        bti: '.AbstractSourceType',
+        ps: [{
+            n: 'abstractDefinitionOperation',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDefinitionOperation',
+            ti: '.AbstractDefinitionOperationType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'SiteVisitType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'atSite',
+            rq: true,
+            ti: '.SitePropertyType'
+          }, {
+            n: 'visitDate',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'visitBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'condition',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TerrestrialReferenceFrameType',
+        bti: 'GML_3_2_1.GeodeticDatumType'
+      }, {
+        ln: 'InterpolatedValueSourcePropertyType',
+        ps: [{
+            n: 'interpolatedValueSource',
+            rq: true,
+            en: 'InterpolatedValueSource',
+            ti: '.InterpolatedValueSourceType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1308,108 +2109,31 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AnyResultType',
+        ln: 'ReferenceFrameSourceType',
+        bti: '.AbstractDefinitionSourceType',
         ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'value',
-            ti: 'AnyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractSourceType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+            t: 'a'
           }, {
-            n: 'runDate',
-            ti: 'GML_3_2_1.TimePositionType'
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
           }, {
-            n: 'runBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'operands',
-            ti: '.AbstractSourceType.Operands'
-          }, {
-            n: 'results',
-            ti: '.AbstractSourceType.Results'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractDefinitionSourceType',
-        bti: '.AbstractSourceType',
-        ps: [{
-            n: 'abstractDefinitionOperation',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDefinitionOperation',
-            ti: '.AbstractDefinitionOperationType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AbstractMonumentType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'type',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'status',
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'installedBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'installedDate',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'MeasurementLineType.Value',
-        tn: null,
-        ps: [{
-            n: 'value',
+            n: 'axisLabels',
             ti: {
               t: 'l',
-              bti: 'Double'
+              bti: 'NCName'
             },
-            t: 'v'
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
           }, {
             n: 'uomLabels',
             ti: {
@@ -1422,51 +2146,215 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NtripMountType',
-        tn: 'ntripMountType',
+        ln: 'RadioInterferencePropertyType',
+        tn: 'radioInterferencePropertyType',
         ps: [{
-            n: 'mountPoint',
-            ti: 'Token'
+            n: 'radioInterference',
+            rq: true,
+            en: 'RadioInterference',
+            ti: '.RadioInterferenceType'
           }, {
-            n: 'sourceID'
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'countryCode',
-            ti: 'Token'
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'network',
-            ti: 'Token'
+            n: 'deletedReason'
           }, {
-            n: 'allowConnections',
-            ti: 'Boolean'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'requireAuthentication',
-            ti: 'Boolean'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
-            n: 'encryption',
-            ti: 'Boolean'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'feesApply',
-            ti: 'Boolean'
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'bitrate',
-            ti: 'Double'
+            n: 'role',
+            t: 'a'
           }, {
-            n: 'carrierPhase',
-            ti: 'Token'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            n: 'navSystem',
-            ti: 'Token'
+            n: 'title',
+            t: 'a'
           }, {
-            n: 'nmea'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            n: 'solution'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractGNSSAntennaType',
-        bti: '.BaseGeodeticEquipmentType',
+        ln: 'GNSSBaselineType',
+        bti: '.AbstractMeasurementType',
         ps: [{
-            n: 'igsModelCode',
-            ti: '.IgsAntennaModelCodeType'
+            n: 'vector',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SurveyedLocalTieType.DifferentialComponentsGNSSMarkerToTiedMonumentITRS',
+        tn: null,
+        ps: [{
+            n: 'dx',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'dy',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'dz',
+            rq: true,
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'AgencyPropertyType',
+        tn: 'agencyPropertyType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'mdSecurityConstraints',
+            en: {
+              lp: 'MD_SecurityConstraints',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
+            },
+            ti: 'ISO19139_GMD_20070417.MDSecurityConstraintsType'
+          }, {
+            n: 'ciResponsibleParty',
+            rq: true,
+            en: {
+              lp: 'CI_ResponsibleParty',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
+            },
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'NodeType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'status',
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'aggregationType',
+            rq: true,
+            ti: 'GML_3_2_1.CodeWithAuthorityType'
+          }, {
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'atSite',
+            rq: true,
+            col: true,
+            ti: '.SitePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
           }]
       }, {
         ln: 'AbstractMeasurementPropertyType',
@@ -1520,22 +2408,24 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LocalEpisodicEffectPropertyType',
-        tn: 'localEpisodicEffectPropertyType',
+        ln: 'PublishedStreamType',
+        tn: 'publishedStreamType',
         ps: [{
-            n: 'localEpisodicEffect',
+            n: 'agency',
+            ti: '.AgencyPropertyType'
+          }, {
+            n: 'dataStream',
+            mno: 0,
+            col: true,
+            ti: '.BaseDataStreamType'
+          }]
+      }, {
+        ln: 'DocumentPropertyType',
+        ps: [{
+            n: 'document',
             rq: true,
-            en: 'LocalEpisodicEffect',
-            ti: '.LocalEpisodicEffectType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
+            en: 'Document',
+            ti: '.DocumentType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1575,74 +2465,6 @@ var GEODESYML_0_4_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTimeSliceType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'dataSource',
-            en: {
-              lp: 'dataSource',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.StringOrRefType'
-          }]
-      }, {
-        ln: 'VCV2X2Type',
-        tn: 'VCV2x2Type',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            rq: true,
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'confidence',
-            an: {
-              lp: 'confidence'
-            },
             t: 'a'
           }]
       }, {
@@ -1775,471 +2597,6 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: '.DataStreamPropertyType'
           }]
       }, {
-        ln: 'FeatureStatusType.History',
-        tn: null,
-        ps: [{
-            n: 'statusInstance',
-            rq: true,
-            col: true,
-            en: 'StatusInstance',
-            ti: '.FeatureStatusInstanceType'
-          }]
-      }, {
-        ln: 'GnssRadomeType',
-        bti: '.BaseGeodeticEquipmentType',
-        ps: [{
-            n: 'igsModelCode',
-            ti: '.IgsRadomeModelCodeType'
-          }]
-      }, {
-        ln: 'DInSARWrappedType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'captureSystem',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'mFrame',
-            rq: true,
-            ti: 'Decimal'
-          }, {
-            n: 'sFrame',
-            rq: true,
-            ti: 'Decimal'
-          }, {
-            n: 'temporalBaseline',
-            rq: true,
-            ti: 'Decimal'
-          }, {
-            n: 'perpendicularBaseline',
-            rq: true,
-            ti: '.ValueType'
-          }, {
-            n: 'track',
-            rq: true,
-            ti: 'Integer'
-          }, {
-            n: 'heading',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'polarity',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'centre',
-            rq: true,
-            ti: '.ValueType'
-          }, {
-            n: 'lookAngle',
-            rq: true,
-            ti: '.ValueType'
-          }, {
-            n: 'imageFormat',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'rectifiedGridCoverage',
-            en: {
-              lp: 'RectifiedGridCoverage',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DiscreteCoverageType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InterpolatedSingleValueType',
-        bti: '.AbstractTimeSliceType',
-        ps: [{
-            n: 'status',
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'value',
-            rq: true,
-            en: 'Value',
-            ti: '.ValueType'
-          }, {
-            n: 'source',
-            ti: '.InterpolatedValueSourcePropertyType'
-          }]
-      }, {
-        ln: 'SignalObstructionPropertyType',
-        tn: 'signalObstructionPropertyType',
-        ps: [{
-            n: 'signalObstruction',
-            rq: true,
-            en: 'SignalObstruction',
-            ti: '.BasePossibleProblemSourceType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureStatusInstanceType',
-        ps: [{
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'statusCode',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'FormInformationType',
-        tn: 'formInformationType',
-        ps: [{
-            n: 'preparedBy',
-            rq: true
-          }, {
-            n: 'datePrepared',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'reportType',
-            rq: true
-          }]
-      }, {
-        ln: 'DataStreamPropertyType',
-        tn: 'dataStreamPropertyType',
-        ps: [{
-            n: 'dataStream',
-            rq: true,
-            ti: '.DataStreamType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AgencyPropertyType',
-        tn: 'agencyPropertyType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'mdSecurityConstraints',
-            en: {
-              lp: 'MD_SecurityConstraints',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
-            },
-            ti: 'ISO19139_GMD_20070417.MDSecurityConstraintsType'
-          }, {
-            n: 'ciResponsibleParty',
-            rq: true,
-            en: {
-              lp: 'CI_ResponsibleParty',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
-            },
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SurveyedLocalTiePropertyType',
-        tn: 'surveyedLocalTiePropertyType',
-        ps: [{
-            n: 'surveyedLocalTie',
-            rq: true,
-            en: 'SurveyedLocalTie',
-            ti: '.SurveyedLocalTieType'
-          }, {
-            n: 'tieMeasurement',
-            rq: true,
-            en: 'TieMeasurement',
-            ti: '.TieMeasurementType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeodesyMLPropertyType',
-        ps: [{
-            n: 'geodesyML',
-            rq: true,
-            en: 'GeodesyML',
-            ti: '.GeodesyMLType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DocumentType.Body.Content',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MeasurementPointType.Value',
-        tn: null,
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uomLabel',
-            ti: 'NCName',
-            an: {
-              lp: 'uomLabel'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'AbstractPositionSourcePropertyType',
         ps: [{
             n: 'abstractPositionSource',
@@ -2291,29 +2648,46 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'HumiditySensorType',
-        bti: '.BaseSensorEquipmentType',
+        ln: 'GnssReceiverType',
+        bti: '.AbstractGNSSReceiverType',
         ps: [{
-            n: 'dataSamplingInterval',
+            n: 'satelliteSystem',
             rq: true,
-            ti: 'Double'
+            col: true,
+            ti: 'GML_3_2_1.CodeType'
           }, {
-            n: 'accuracyPercentRelativeHumidity',
-            rq: true,
-            en: 'accuracy-percentRelativeHumidity',
-            ti: 'Double'
-          }, {
-            n: 'aspiration',
+            n: 'firmwareVersion',
             rq: true
+          }, {
+            n: 'elevationCutoffSetting',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'dateInstalled',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateRemoved',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'temperatureStabilization',
+            rq: true,
+            ti: 'Double'
           }]
       }, {
-        ln: 'HumiditySensorPropertyType',
-        tn: 'humiditySensorPropertyType',
+        ln: 'SurveyedLocalTiePropertyType',
+        tn: 'surveyedLocalTiePropertyType',
         ps: [{
-            n: 'humiditySensor',
+            n: 'surveyedLocalTie',
             rq: true,
-            en: 'HumiditySensor',
-            ti: '.HumiditySensorType'
+            en: 'SurveyedLocalTie',
+            ti: '.SurveyedLocalTieType'
+          }, {
+            n: 'tieMeasurement',
+            rq: true,
+            en: 'TieMeasurement',
+            ti: '.TieMeasurementType'
           }, {
             n: 'dateInserted',
             rq: true,
@@ -2323,1002 +2697,6 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'GML_3_2_1.TimePositionType'
           }, {
             n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GNSSBaselineType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'vector',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSourceType.Results',
-        tn: null,
-        ps: [{
-            n: 'abstractResult',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractResult',
-            ti: 'AnyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DynamicFeatureType',
-        bti: 'GML_3_2_1.DynamicFeatureType'
-      }, {
-        ln: 'MeasurementLineType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'atSetup',
-            ti: '.SetupPropertyType'
-          }, {
-            n: 'toSetup',
-            ti: '.SetupPropertyType'
-          }, {
-            n: 'atNode',
-            rq: true,
-            ti: '.NodePropertyType'
-          }, {
-            n: 'atHeight',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'toNode',
-            rq: true,
-            ti: '.NodePropertyType'
-          }, {
-            n: 'toHeight',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'value',
-            rq: true,
-            ti: '.MeasurementLineType.Value'
-          }, {
-            n: 'abstractQuality',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SetupType',
-        bti: '.DynamicFeatureType',
-        ps: [{
-            n: 'atSite',
-            ti: '.SitePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'MeasurementType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'type',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'measurementLine',
-            mno: 0,
-            col: true,
-            en: 'MeasurementLine',
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'linePairQuality',
-            mno: 0,
-            col: true,
-            ti: '.MeasurementLineCovarianceType'
-          }, {
-            n: 'measurementPoint',
-            mno: 0,
-            col: true,
-            en: 'MeasurementPoint',
-            ti: '.MeasurementPointType'
-          }, {
-            n: 'pointPairQuality',
-            mno: 0,
-            col: true,
-            ti: '.MeasurementPointCovarianceType'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeodeticEquipmentItemPropertyType',
-        tn: 'geodeticEquipmentItemPropertyType',
-        ps: [{
-            n: 'geodeticEquipmentItem',
-            rq: true,
-            ti: '.BaseGeodeticEquipmentType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InstrumentPropertyType',
-        ps: [{
-            n: 'instrument',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Instrument',
-            ti: '.InstrumentType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GnssAntennaConfigType',
-        tn: 'gnssAntennaConfigType',
-        ps: [{
-            n: 'antennaCableLengthMetersOrAntennaCableType',
-            mno: 0,
-            mxo: 2,
-            col: true,
-            etis: [{
-                en: 'antennaCableLengthMeters',
-                ti: 'Decimal'
-              }, {
-                en: 'antennaCableType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'GeodeticPosition',
-        tn: 'geodeticPosition',
-        ps: [{
-            n: 'point',
-            rq: true,
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PointType'
-          }]
-      }, {
-        ln: 'AstronomicLongitudeType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'longitude',
-            rq: true,
-            ti: '.MeasurementPointType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OrthometricHeightDifferenceType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'heightDifference',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MeasurementOperationPropertyType',
-        ps: [{
-            n: 'abstractMeasurementOperation',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMeasurementOperation',
-            ti: '.AbstractMeasurementOperationType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ValueType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            rq: true,
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'confidence',
-            an: {
-              lp: 'confidence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EllipsoidChordDistanceType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'distance',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SetupInstanceType',
-        bti: '.AbstractTimeSliceType',
-        ps: [{
-            n: 'fromProject',
-            ti: '.ProjectPropertyType'
-          }, {
-            n: 'setupHeight',
-            ti: '.ValueType'
-          }, {
-            n: 'observedBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'usesInstrument',
-            mno: 0,
-            col: true,
-            ti: '.InstrumentPropertyType'
-          }, {
-            n: 'usesSensor',
-            mno: 0,
-            col: true,
-            ti: '.SensorPropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'IgsAntennaModelCodeType',
-        tn: 'igsAntennaModelCodeType',
-        bti: 'ISO19139_GCO_20070417.CodeListValueType'
-      }, {
-        ln: 'WaterVaporSensorType',
-        bti: '.BaseSensorEquipmentType',
-        ps: [{
-            n: 'distanceToAntenna',
-            rq: true,
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'SensorPropertyType',
-        ps: [{
-            n: 'sensor',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Sensor',
-            ti: '.SensorType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureStatusType',
-        ps: [{
-            n: 'currentStatus',
-            rq: true,
-            ti: '.FeatureStatusInstanceType'
-          }, {
-            n: 'history',
-            ti: '.FeatureStatusType.History'
-          }]
-      }, {
-        ln: 'TerrestrialReferenceFramePropertyType',
-        ps: [{
-            n: 'terrestrialReferenceFrame',
-            rq: true,
-            en: 'TerrestrialReferenceFrame',
-            ti: '.TerrestrialReferenceFrameType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'IgsReceiverModelCodeType',
-        tn: 'igsReceiverModelCodeType',
-        bti: 'ISO19139_GCO_20070417.CodeListValueType'
-      }, {
-        ln: 'DocumentPropertyType',
-        ps: [{
-            n: 'document',
-            rq: true,
-            en: 'Document',
-            ti: '.DocumentType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SitePropertyType',
-        ps: [{
-            n: 'site',
-            rq: true,
-            en: 'Site',
-            ti: '.SiteType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMeasurementOperationType',
-        bti: 'GML_3_2_1.IdentifiedObjectType',
-        ps: [{
-            n: 'reductionMethod',
-            en: 'ReductionMethod'
-          }, {
-            n: 'procedure',
-            ti: 'OM_2_0.OMProcessPropertyType'
-          }]
-      }, {
-        ln: 'AbstractMeasurementType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'aprioriScalar',
-            mno: 0,
-            col: true,
-            ti: '.ValueType'
-          }, {
-            n: 'fromProject',
-            ti: '.ProjectPropertyType'
-          }, {
-            n: 'source',
-            ti: '.AbstractMeasurementSourcePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GeodeticAzimuthType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'azimuth',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BaseDataStreamType',
-        tn: 'baseDataStreamType',
-        ps: [{
-            n: 'hostname',
-            rq: true
-          }, {
-            n: 'ipAddress',
-            rq: true
-          }, {
-            n: 'port',
-            rq: true,
-            ti: 'PositiveInteger'
-          }, {
-            n: 'sampInterval',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'dataFormat',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'ntripMounts',
-            ti: '.NtripMountsType'
-          }, {
-            n: 'startDate',
-            ti: 'Date'
-          }]
-      }, {
-        ln: 'OrthometricHeightType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'orthometricHeight',
-            rq: true,
-            ti: '.MeasurementPointType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObservationQualitySourcePropertyType',
-        ps: [{
-            n: 'observationQualitySource',
-            rq: true,
-            en: 'ObservationQualitySource',
-            ti: '.ObservationQualitySourceType'
           }, {
             n: 'nilReason',
             ti: {
@@ -3410,1480 +2788,6 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GnssRadomeConfigType',
-        tn: 'gnssRadomeConfigType',
-        ps: [{
-            n: 'radomeFastenerType'
-          }]
-      }, {
-        ln: 'InterpolatedValueSourceType',
-        bti: '.AbstractSourceType',
-        ps: [{
-            n: 'definition',
-            rq: true,
-            ti: 'GML_3_2_1.DictionaryEntryType'
-          }]
-      }, {
-        ln: 'DynamicTransformationType',
-        bti: 'GML_3_2_1.AbstractGeneralTransformationType',
-        ps: [{
-            n: 'sourceEpoch',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'targetEpoch',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'usesMethod',
-            rq: true,
-            ti: 'GML_3_2_1.OperationMethodType'
-          }, {
-            n: 'parameterValue',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'parameterValue',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractGeneralParameterValuePropertyType',
-            t: 'er'
-          }, {
-            n: 'source',
-            mno: 0,
-            col: true,
-            ti: '.AbstractDefinitionSourcePropertyType'
-          }]
-      }, {
-        ln: 'AnyOperandType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'value',
-            ti: 'AnyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ObservationQualitySourceType',
-        bti: '.AbstractSourceType',
-        ps: [{
-            n: 'definition',
-            rq: true,
-            ti: 'GML_3_2_1.DictionaryEntryType'
-          }]
-      }, {
-        ln: 'TerrestrialReferenceFrameType',
-        bti: 'GML_3_2_1.GeodeticDatumType'
-      }, {
-        ln: 'NtripMountsType',
-        tn: 'ntripMountsType',
-        ps: [{
-            n: 'ntripMount',
-            rq: true,
-            col: true,
-            ti: '.NtripMountType'
-          }]
-      }, {
-        ln: 'SiteType',
-        bti: '.AbstractMonumentType',
-        ps: [{
-            n: 'monument',
-            en: 'Monument',
-            ti: '.MonumentPropertyType'
-          }, {
-            n: 'supplementaryMark',
-            mno: 0,
-            col: true,
-            en: 'SupplementaryMark',
-            ti: '.SupplementaryMarkPropertyType'
-          }]
-      }, {
-        ln: 'SetupPropertyType',
-        ps: [{
-            n: 'setup',
-            rq: true,
-            en: 'Setup',
-            ti: '.SetupType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SiteLocationType',
-        tn: 'siteLocationType',
-        ps: [{
-            n: 'city',
-            rq: true
-          }, {
-            n: 'state',
-            rq: true
-          }, {
-            n: 'countryCodeISO',
-            rq: true,
-            ti: '.CountryCodeType'
-          }, {
-            n: 'tectonicPlate',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'approximatePositionITRF',
-            rq: true,
-            ti: '.SiteLocationType.ApproximatePositionITRF'
-          }, {
-            n: 'notes',
-            rq: true
-          }]
-      }, {
-        ln: 'SiteLocationType.ApproximatePositionITRF',
-        tn: null,
-        ps: [{
-            n: 'cartesianPosition',
-            ti: '.CartesianPosition'
-          }, {
-            n: 'geodeticPosition',
-            ti: '.GeodeticPosition'
-          }]
-      }, {
-        ln: 'PositionEstimatorProcessType',
-        bti: '.AbstractPositionEstimatorType',
-        ps: [{
-            n: 'processStep',
-            rq: true,
-            col: true,
-            ti: '.PositionEstimatorProcessType.ProcessStep'
-          }, {
-            n: 'dimension',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransformationType',
-        bti: '.AbstractPositionSourceType',
-        ps: [{
-            n: 'rest',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'notes'
-              }, {
-                en: 'version'
-              }, {
-                en: 'epoch',
-                ti: 'GML_3_2_1.TimePositionType'
-              }, {
-                en: 'extension',
-                ti: 'AnyType'
-              }, {
-                en: 'status',
-                ti: 'GML_3_2_1.CodeType'
-              }, {
-                en: 'associatedDocument',
-                ti: '.DocumentPropertyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FrequencyStandardPropertyType',
-        tn: 'frequencyStandardPropertyType',
-        ps: [{
-            n: 'frequencyStandard',
-            rq: true,
-            en: 'FrequencyStandard',
-            ti: '.FrequencyStandardType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CollocationInformationPropertyType',
-        tn: 'collocationInformationPropertyType',
-        ps: [{
-            n: 'collocationInformation',
-            rq: true,
-            en: 'CollocationInformation',
-            ti: '.CollocationInformationType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SlopeDistanceType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'slopeDistance',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }]
-      }, {
-        ln: 'PositionPairCovarianceType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'atPosition',
-            rq: true,
-            ti: '.PositionPropertyType'
-          }, {
-            n: 'toPosition',
-            rq: true,
-            ti: '.PositionPropertyType'
-          }, {
-            n: 'status',
-            rq: true,
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'abstractQuality',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'source',
-            ti: '.AbstractPositionSourcePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDefinitionSourcePropertyType',
-        ps: [{
-            n: 'abstractDefinitionSource',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDefinitionSource',
-            ti: '.AbstractDefinitionSourceType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PressureSensorType',
-        bti: '.BaseSensorEquipmentType',
-        ps: [{
-            n: 'dataSamplingInterval',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'accuracyHPa',
-            rq: true,
-            en: 'accuracy-hPa',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'AbstractMeasurementEstimatorType',
-        bti: '.AbstractMeasurementOperationType'
-      }, {
-        ln: 'SensorType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GeodeticLongitudeType',
-        bti: '.AstronomicLongitudeType'
-      }, {
-        ln: 'SensorWithCodeType',
-        bti: '.SensorType'
-      }, {
-        ln: 'GNSSBaselineReductionType',
-        bti: '.AbstractMeasurementSourceType',
-        ps: [{
-            n: 'rest',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'notes'
-              }, {
-                en: 'configureValue',
-                ti: '.ValueType'
-              }, {
-                en: 'version'
-              }, {
-                en: 'status',
-                ti: 'GML_3_2_1.CodeType'
-              }, {
-                en: 'associatedDocument',
-                ti: '.DocumentPropertyType'
-              }, {
-                en: 'extension',
-                ti: 'AnyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDefinitionEstimatorType',
-        bti: '.AbstractDefinitionOperationType'
-      }, {
-        ln: 'HeightDifferenceType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'heightDifference',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }]
-      }, {
-        ln: 'SiteStreamType',
-        tn: 'siteStreamType',
-        ps: [{
-            n: 'agency',
-            ti: '.AgencyPropertyType'
-          }, {
-            n: 'dataStream',
-            ti: '.BaseDataStreamType'
-          }]
-      }, {
-        ln: 'DataStreamType',
-        tn: 'dataStreamType',
-        ps: [{
-            n: 'siteStream',
-            ti: '.SiteStreamType'
-          }, {
-            n: 'publishedStream',
-            ti: '.PublishedStreamType'
-          }, {
-            n: 'notes'
-          }]
-      }, {
-        ln: 'AbstractPositionSourceType',
-        bti: '.AbstractSourceType',
-        ps: [{
-            n: 'operation',
-            rq: true,
-            ti: 'GML_3_2_1.CoordinateOperationPropertyType'
-          }]
-      }, {
-        ln: 'ReferenceFrameSourceType',
-        bti: '.AbstractDefinitionSourceType',
-        ps: [{
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InterpolatedValueSourcePropertyType',
-        ps: [{
-            n: 'interpolatedValueSource',
-            rq: true,
-            en: 'InterpolatedValueSource',
-            ti: '.InterpolatedValueSourceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSiteLogType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'atSite',
-            ti: '.SitePropertyType'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MeanSeaLevelArcDistanceType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'arcDistance',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PositionEstimatorProcessType.ProcessStep',
-        tn: null,
-        ps: [{
-            n: 'description',
-            rq: true
-          }, {
-            n: 'processReference',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'processValue',
-            mno: 0,
-            col: true,
-            ti: '.ValueType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractObservationQualityType',
-        bti: '.DynamicFeatureType',
-        ps: [{
-            n: 'atSite',
-            rq: true,
-            ti: '.SitePropertyType'
-          }, {
-            n: 'source',
-            ti: '.ObservationQualitySourcePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SiteVisitType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'atSite',
-            rq: true,
-            ti: '.SitePropertyType'
-          }, {
-            n: 'visitDate',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'visitBy',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'condition',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SupplementaryMarkPropertyType',
-        ps: [{
-            n: 'supplementaryMark',
-            rq: true,
-            en: 'SupplementaryMark',
-            ti: '.SupplementaryMarkType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'BasePossibleProblemSourceType',
-        tn: 'basePossibleProblemSourceType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'possibleProblemSource',
-            rq: true
-          }, {
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }, {
-            n: 'notes',
-            rq: true
-          }]
-      }, {
-        ln: 'InstrumentType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'HorizontalAngleType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'base',
-            rq: true,
-            ti: '.MeasurementPointType'
-          }, {
-            n: 'angle',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }]
-      }, {
-        ln: 'AbstractMeasurementSourceType',
-        bti: '.AbstractSourceType',
-        ps: [{
-            n: 'operation',
-            rq: true,
-            ti: '.MeasurementOperationPropertyType'
-          }]
-      }, {
-        ln: 'MeasurementPointType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'atSetup',
-            rq: true,
-            ti: '.SetupPropertyType'
-          }, {
-            n: 'atNode',
-            rq: true,
-            ti: '.NodePropertyType'
-          }, {
-            n: 'atHeight',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'value',
-            rq: true,
-            ti: '.MeasurementPointType.Value'
-          }, {
-            n: 'abstractQuality',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'VerticalAngleType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'verticalAngle',
-            rq: true,
-            ti: '.MeasurementLineType'
-          }]
-      }, {
-        ln: 'GnssAntennaPropertyType',
-        tn: 'gnssAntennaPropertyType',
-        ps: [{
-            n: 'gnssAntenna',
-            rq: true,
-            en: 'GnssAntenna',
-            ti: '.GnssAntennaType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemperatureSensorType',
-        bti: '.BaseSensorEquipmentType',
-        ps: [{
-            n: 'dataSamplingInterval',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'accuracyDegreesCelcius',
-            rq: true,
-            en: 'accuracy-degreesCelcius',
-            ti: 'Double'
-          }, {
-            n: 'aspiration',
-            rq: true
-          }]
-      }, {
-        ln: 'GNSSBaselineClusterType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'baseline',
-            rq: true,
-            col: true,
-            en: 'Baseline',
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'baselinePairQuality',
-            mno: 0,
-            col: true,
-            ti: '.MeasurementLineCovarianceType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PositionTimeSeriesType',
-        bti: '.DynamicFeatureType',
-        ps: [{
-            n: 'atNode',
-            rq: true,
-            ti: '.NodePropertyType'
-          }, {
-            n: 'status',
-            rq: true,
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'source',
-            ti: '.AbstractPositionSourcePropertyType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SupplementaryMarkType',
-        bti: '.MonumentType',
-        ps: [{
-            n: 'relativeOffset',
-            mno: 0,
-            col: true,
-            ti: '.RelativeOffsetType'
-          }]
-      }, {
-        ln: 'SiteIdentificationType',
-        tn: 'siteIdentificationType',
-        ps: [{
-            n: 'siteName',
-            rq: true
-          }, {
-            n: 'fourCharacterID',
-            rq: true
-          }, {
-            n: 'monumentNumber',
-            ti: 'Integer'
-          }, {
-            n: 'receiverNumber',
-            ti: 'Integer'
-          }, {
-            n: 'monumentInscription'
-          }, {
-            n: 'iersDOMESNumber',
-            rq: true
-          }, {
-            n: 'cdpNumber',
-            rq: true
-          }, {
-            n: 'monumentDescription',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'heightOfTheMonument',
-            ti: 'Double'
-          }, {
-            n: 'monumentFoundation'
-          }, {
-            n: 'foundationDepth',
-            ti: 'Double'
-          }, {
-            n: 'markerDescription'
-          }, {
-            n: 'dateInstalled',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'geologicCharacteristic',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'bedrockType'
-          }, {
-            n: 'bedrockCondition'
-          }, {
-            n: 'fractureSpacing'
-          }, {
-            n: 'faultZonesNearby',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'distanceActivity',
-            en: 'distance-Activity'
-          }, {
-            n: 'notes'
-          }]
-      }, {
-        ln: 'CartesianPosition',
-        tn: 'cartesianPosition',
-        ps: [{
-            n: 'point',
-            rq: true,
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PointType'
-          }]
-      }, {
-        ln: 'IgsRadomeModelCodeType',
-        tn: 'igsRadomeModelCodeType',
-        bti: 'GML_3_2_1.CodeWithAuthorityType'
-      }, {
-        ln: 'DocumentType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'type',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'createdDate',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'receivedDate',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'custodian',
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'remarks'
-          }, {
-            n: 'body',
-            ti: '.DocumentType.Body'
-          }]
-      }, {
-        ln: 'GNSSObservationQualityType'
-      }, {
-        ln: 'MoreInformationType',
-        tn: 'moreInformationType',
-        ps: [{
-            n: 'dataCenter',
-            rq: true,
-            col: true
-          }, {
-            n: 'urlForMoreInformation',
-            rq: true
-          }, {
-            n: 'siteMap',
-            rq: true
-          }, {
-            n: 'siteDiagram',
-            rq: true
-          }, {
-            n: 'horizonMask',
-            rq: true
-          }, {
-            n: 'monumentDescription',
-            rq: true
-          }, {
-            n: 'sitePictures',
-            rq: true
-          }, {
-            n: 'notes'
-          }, {
-            n: 'antennaGraphicsWithDimensions',
-            rq: true
-          }, {
-            n: 'insertTextGraphicFromAntenna',
-            rq: true
-          }, {
-            n: 'doi',
-            rq: true,
-            en: 'DOI',
-            ti: 'GML_3_2_1.CodeType'
-          }]
-      }, {
-        ln: 'RadioInterferenceType',
-        tn: 'radioInterferenceType',
-        bti: '.BasePossibleProblemSourceType',
-        ps: [{
-            n: 'observedDegradation',
-            rq: true
-          }]
-      }, {
-        ln: 'AdjustmentMeasurementType',
-        tn: 'adjustmentMeasurementType',
-        ps: [{
-            n: 'usesMeasurement',
-            rq: true,
-            ti: '.AbstractMeasurementPropertyType'
-          }, {
-            n: 'aprioriScalar',
-            mno: 0,
-            col: true,
-            ti: '.ValueType'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }, {
-            n: 'include',
-            ti: 'Boolean',
-            an: {
-              lp: 'include'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultipathSourcePropertyType',
-        tn: 'multipathSourcePropertyType',
-        ps: [{
-            n: 'multipathSource',
-            rq: true,
-            en: 'MultipathSource',
-            ti: '.BasePossibleProblemSourceType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         ln: 'InterpolatedDynamicValueType',
         bti: '.DynamicFeatureType',
         ps: [{
@@ -4893,6 +2797,67 @@ var GEODESYML_0_4_Module_Factory = function () {
           }, {
             n: 'source',
             ti: '.InterpolatedValueSourcePropertyType'
+          }]
+      }, {
+        ln: 'GnssRadomeConfigType',
+        tn: 'gnssRadomeConfigType',
+        ps: [{
+            n: 'radomeFastenerType'
+          }]
+      }, {
+        ln: 'PositionSourceType',
+        bti: '.AbstractPositionSourceType',
+        ps: [{
+            n: 'estimationType',
+            en: 'EstimationType',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'version'
+          }, {
+            n: 'epoch',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'status',
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'configureValue',
+            mno: 0,
+            col: true,
+            ti: '.ValueType'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GNSSObservationQualityInstanceType',
@@ -5016,24 +2981,171 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'MeasurementLineCovarianceType',
-        bti: 'GML_3_2_1.AbstractGMLType',
+        ln: 'LocalEpisodicEffectType',
+        tn: 'localEpisodicEffectType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'atLine',
+            n: 'validTime',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
           }, {
-            n: 'toLine',
+            n: 'event',
+            rq: true
+          }]
+      }, {
+        ln: 'TransformationPositionType',
+        tn: 'transformationPositionType',
+        ps: [{
+            n: 'position',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            en: 'Position',
+            ti: '.PositionType'
+          }]
+      }, {
+        ln: 'NtripMountsType',
+        tn: 'ntripMountsType',
+        ps: [{
+            n: 'ntripMount',
+            rq: true,
+            col: true,
+            ti: '.NtripMountType'
+          }]
+      }, {
+        ln: 'GeodesyMLType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
           }, {
-            n: 'abstractQuality',
+            n: 'elements',
             rq: true,
+            col: true,
             mx: false,
             dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
+            etis: [{
+                en: 'AbstractPositionSource',
+                ti: '.AbstractPositionSourceType'
+              }, {
+                en: 'AbstractMeasurementOperation',
+                ti: '.AbstractMeasurementOperationType'
+              }, {
+                en: 'AbstractDefinitionSource',
+                ti: '.AbstractDefinitionSourceType'
+              }, {
+                en: 'Node',
+                ti: '.NodeType'
+              }, {
+                en: 'TerrestrialReferenceFrame',
+                ti: '.TerrestrialReferenceFrameType'
+              }, {
+                en: 'AbstractMeasurementSource',
+                ti: '.AbstractMeasurementSourceType'
+              }, {
+                en: 'DynamicTransformation',
+                ti: '.DynamicTransformationType'
+              }, {
+                en: 'Site',
+                ti: '.SiteType'
+              }, {
+                en: 'Setup',
+                ti: '.SetupType'
+              }, {
+                en: 'AbstractDefinitionOperation',
+                ti: '.AbstractDefinitionOperationType'
+              }, {
+                en: 'Instrument',
+                ti: '.InstrumentType'
+              }, {
+                en: 'Document',
+                ti: '.DocumentType'
+              }, {
+                en: 'AbstractPositionEstimator',
+                ti: '.AbstractPositionEstimatorType'
+              }, {
+                en: 'AbstractSiteLog',
+                ti: '.AbstractSiteLogType'
+              }, {
+                en: 'SupplementaryMark',
+                ti: '.SupplementaryMarkType'
+              }, {
+                en: {
+                  lp: 'AbstractCRS',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.AbstractCRSType'
+              }, {
+                en: 'AbstractPosition',
+                ti: 'GML_3_2_1.AbstractFeatureType'
+              }, {
+                en: 'siteVisit',
+                ti: '.SiteVisitType'
+              }, {
+                en: 'Project',
+                ti: '.ProjectType'
+              }, {
+                en: 'AbstractMeasurement',
+                ti: 'GML_3_2_1.AbstractFeatureType'
+              }, {
+                en: 'Sensor',
+                ti: '.SensorType'
+              }, {
+                en: 'Monument',
+                ti: '.MonumentType'
+              }, {
+                en: 'PositionPairCovariance',
+                ti: '.PositionPairCovarianceType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnyOperandType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'value',
+            ti: 'AnyType'
           }, {
             n: 'notes'
           }, {
@@ -5046,49 +3158,16 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BaseGeodeticMonumentType',
-        tn: 'baseGeodeticMonumentType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'DataStreamType',
+        tn: 'dataStreamType',
         ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.CodeType'
+            n: 'siteStream',
+            ti: '.SiteStreamType'
           }, {
-            n: 'commonName'
+            n: 'publishedStream',
+            ti: '.PublishedStreamType'
           }, {
-            n: 'characterIdentifier',
-            rq: true
-          }, {
-            n: 'inscription'
-          }, {
-            n: 'iersDomesNumber'
-          }, {
-            n: 'cdpNumber'
-          }, {
-            n: 'ngsPID'
-          }, {
-            n: 'verbalLocation'
-          }, {
-            n: 'geodeticPosition',
-            rq: true,
-            ti: '.PositionPropertyType'
-          }, {
-            n: 'nearestCity'
-          }, {
-            n: 'territory'
-          }, {
-            n: 'country',
-            rq: true
-          }, {
-            n: 'monumentHeight',
-            ti: 'Decimal'
-          }, {
-            n: 'monumentFoundation',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'monumentFoundationDepth',
-            ti: 'Decimal'
-          }, {
-            n: 'geologicCharacteristics'
+            n: 'notes'
           }]
       }, {
         ln: 'FrequencyStandardType',
@@ -5120,41 +3199,131 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'AdjustedPositionQualityType',
-        tn: 'adjustedPositionQualityType',
+        ln: 'MoreInformationType',
+        tn: 'moreInformationType',
         ps: [{
-            n: 'atPosition',
+            n: 'dataCenter',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            col: true
           }, {
-            n: 'toPosition',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            n: 'urlForMoreInformation',
+            rq: true
           }, {
-            n: 'value',
-            rq: true,
-            ti: '.ValueType'
+            n: 'siteMap',
+            rq: true
+          }, {
+            n: 'siteDiagram',
+            rq: true
+          }, {
+            n: 'horizonMask',
+            rq: true
+          }, {
+            n: 'monumentDescription',
+            rq: true
+          }, {
+            n: 'sitePictures',
+            rq: true
           }, {
             n: 'notes'
           }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
+            n: 'antennaGraphicsWithDimensions',
+            rq: true
           }, {
-            n: 'extension',
-            ti: 'AnyType'
+            n: 'insertTextGraphicFromAntenna',
+            rq: true
+          }, {
+            n: 'doi',
+            rq: true,
+            en: 'DOI',
+            ti: 'GML_3_2_1.CodeType'
           }]
       }, {
-        ln: 'AbstractMeasurementSourcePropertyType',
+        ln: 'BaseDataStreamType',
+        tn: 'baseDataStreamType',
         ps: [{
-            n: 'abstractMeasurementSource',
+            n: 'hostname',
+            rq: true
+          }, {
+            n: 'ipAddress',
+            rq: true
+          }, {
+            n: 'port',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMeasurementSource',
-            ti: '.AbstractMeasurementSourceType',
-            t: 'er'
+            ti: 'PositiveInteger'
+          }, {
+            n: 'sampInterval',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'dataFormat',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'ntripMounts',
+            ti: '.NtripMountsType'
+          }, {
+            n: 'startDate',
+            ti: 'Date'
+          }]
+      }, {
+        ln: 'ValueType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            rq: true,
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'confidence',
+            an: {
+              lp: 'confidence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GnssAntennaPropertyType',
+        tn: 'gnssAntennaPropertyType',
+        ps: [{
+            n: 'gnssAntenna',
+            rq: true,
+            en: 'GnssAntenna',
+            ti: '.GnssAntennaType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
           }, {
             n: 'nilReason',
             ti: {
@@ -5196,10 +3365,6 @@ var GEODESYML_0_4_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'CountryCodeType',
-        tn: 'countryCodeType',
-        bti: 'ISO19139_GCO_20070417.CodeListValueType'
       }, {
         ln: 'GnssRadomePropertyType',
         tn: 'gnssRadomePropertyType',
@@ -5259,12 +3424,1505 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'GeodeticLongitudeType',
+        bti: '.AstronomicLongitudeType'
+      }, {
+        ln: 'AbstractSiteLogType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'atSite',
+            ti: '.SitePropertyType'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BaseSensorEquipmentType',
+        bti: '.SensorWithCodeType',
+        ps: [{
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'manufacturer',
+            rq: true
+          }, {
+            n: 'serialNumber',
+            rq: true
+          }, {
+            n: 'heightDiffToAntenna',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'calibrationDate',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }]
+      }, {
+        ln: 'CountryCodeType',
+        tn: 'countryCodeType',
+        bti: 'ISO19139_GCO_20070417.CodeListValueType'
+      }, {
+        ln: 'AbstractSourceType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'runDate',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'runBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'operands',
+            ti: '.AbstractSourceType.Operands'
+          }, {
+            n: 'results',
+            ti: '.AbstractSourceType.Results'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'SetupInstanceType',
+        bti: '.AbstractTimeSliceType',
+        ps: [{
+            n: 'fromProject',
+            ti: '.ProjectPropertyType'
+          }, {
+            n: 'setupHeight',
+            ti: '.ValueType'
+          }, {
+            n: 'observedBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'usesInstrument',
+            mno: 0,
+            col: true,
+            ti: '.InstrumentPropertyType'
+          }, {
+            n: 'usesSensor',
+            mno: 0,
+            col: true,
+            ti: '.SensorPropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AdjustmentPositionType',
+        tn: 'adjustmentPositionType',
+        ps: [{
+            n: 'usesPosition',
+            rq: true,
+            ti: '.PositionPropertyType'
+          }, {
+            n: 'abstractQuality',
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'constraint',
+            an: {
+              lp: 'constraint'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasurementPointCovarianceType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'atPoint',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'toPoint',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'abstractQuality',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GNSSObservationQualityType'
+      }, {
+        ln: 'DocumentType.Body',
+        tn: null,
+        ps: [{
+            n: 'fileReference',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'content',
+            rq: true,
+            ti: '.DocumentType.Body.Content'
+          }, {
+            n: 'any',
+            rq: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DocumentType.Body.Content',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SetupType',
+        bti: '.DynamicFeatureType',
+        ps: [{
+            n: 'atSite',
+            ti: '.SitePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'SiteType',
+        bti: '.AbstractMonumentType',
+        ps: [{
+            n: 'monument',
+            en: 'Monument',
+            ti: '.MonumentPropertyType'
+          }, {
+            n: 'supplementaryMark',
+            mno: 0,
+            col: true,
+            en: 'SupplementaryMark',
+            ti: '.SupplementaryMarkPropertyType'
+          }]
+      }, {
+        ln: 'TemperatureSensorType',
+        bti: '.BaseSensorEquipmentType',
+        ps: [{
+            n: 'dataSamplingInterval',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'accuracyDegreesCelcius',
+            rq: true,
+            en: 'accuracy-degreesCelcius',
+            ti: 'Double'
+          }, {
+            n: 'aspiration',
+            rq: true
+          }]
+      }, {
+        ln: 'MeasurementOperationPropertyType',
+        ps: [{
+            n: 'abstractMeasurementOperation',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMeasurementOperation',
+            ti: '.AbstractMeasurementOperationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'VerticalAngleType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'verticalAngle',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }]
+      }, {
+        ln: 'SensorType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.CodeType'
+          }]
+      }, {
+        ln: 'InterpolatedValueSourceType',
+        bti: '.AbstractSourceType',
+        ps: [{
+            n: 'definition',
+            rq: true,
+            ti: 'GML_3_2_1.DictionaryEntryType'
+          }]
+      }, {
+        ln: 'LocalEpisodicEffectPropertyType',
+        tn: 'localEpisodicEffectPropertyType',
+        ps: [{
+            n: 'localEpisodicEffect',
+            rq: true,
+            en: 'LocalEpisodicEffect',
+            ti: '.LocalEpisodicEffectType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridTransformationType',
+        bti: '.DynamicTransformationType',
+        ps: [{
+            n: 'rectifiedGridCoverage',
+            rq: true,
+            en: {
+              lp: 'RectifiedGridCoverage',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.DiscreteCoverageType'
+          }]
+      }, {
+        ln: 'AbstractDefinitionEstimatorType',
+        bti: '.AbstractDefinitionOperationType'
+      }, {
+        ln: 'SensorPropertyType',
+        ps: [{
+            n: 'sensor',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Sensor',
+            ti: '.SensorType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractMeasurementType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'aprioriScalar',
+            mno: 0,
+            col: true,
+            ti: '.ValueType'
+          }, {
+            n: 'fromProject',
+            ti: '.ProjectPropertyType'
+          }, {
+            n: 'source',
+            ti: '.AbstractMeasurementSourcePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AstronomicAzimuthType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'azimuth',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObservationQualitySourceType',
+        bti: '.AbstractSourceType',
+        ps: [{
+            n: 'definition',
+            rq: true,
+            ti: 'GML_3_2_1.DictionaryEntryType'
+          }]
+      }, {
+        ln: 'HumiditySensorPropertyType',
+        tn: 'humiditySensorPropertyType',
+        ps: [{
+            n: 'humiditySensor',
+            rq: true,
+            en: 'HumiditySensor',
+            ti: '.HumiditySensorType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DirectVelocityType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SingleValueType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'confidence',
+            an: {
+              lp: 'confidence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PositionPairCovarianceType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'atPosition',
+            rq: true,
+            ti: '.PositionPropertyType'
+          }, {
+            n: 'toPosition',
+            rq: true,
+            ti: '.PositionPropertyType'
+          }, {
+            n: 'status',
+            rq: true,
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'abstractQuality',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'source',
+            ti: '.AbstractPositionSourcePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BaseGeodeticMonumentType',
+        tn: 'baseGeodeticMonumentType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'commonName'
+          }, {
+            n: 'characterIdentifier',
+            rq: true
+          }, {
+            n: 'inscription'
+          }, {
+            n: 'iersDomesNumber'
+          }, {
+            n: 'cdpNumber'
+          }, {
+            n: 'ngsPID'
+          }, {
+            n: 'verbalLocation'
+          }, {
+            n: 'geodeticPosition',
+            rq: true,
+            ti: '.PositionPropertyType'
+          }, {
+            n: 'nearestCity'
+          }, {
+            n: 'territory'
+          }, {
+            n: 'country',
+            rq: true
+          }, {
+            n: 'monumentHeight',
+            ti: 'Decimal'
+          }, {
+            n: 'monumentFoundation',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'monumentFoundationDepth',
+            ti: 'Decimal'
+          }, {
+            n: 'geologicCharacteristics'
+          }]
+      }, {
+        ln: 'FormInformationType',
+        tn: 'formInformationType',
+        ps: [{
+            n: 'preparedBy',
+            rq: true
+          }, {
+            n: 'datePrepared',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'reportType',
+            rq: true
+          }]
+      }, {
+        ln: 'MeasurementLineCovarianceType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'atLine',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'toLine',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'abstractQuality',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'PositionEstimatorProcessType.ProcessStep',
+        tn: null,
+        ps: [{
+            n: 'description',
+            rq: true
+          }, {
+            n: 'processReference',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'processValue',
+            mno: 0,
+            col: true,
+            ti: '.ValueType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractPositionSourceType',
+        bti: '.AbstractSourceType',
+        ps: [{
+            n: 'operation',
+            rq: true,
+            ti: 'GML_3_2_1.CoordinateOperationPropertyType'
+          }]
+      }, {
+        ln: 'MeanSeaLevelArcDistanceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'arcDistance',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObservationQualitySourcePropertyType',
+        ps: [{
+            n: 'observationQualitySource',
+            rq: true,
+            en: 'ObservationQualitySource',
+            ti: '.ObservationQualitySourceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractMeasurementEstimatorType',
+        bti: '.AbstractMeasurementOperationType'
+      }, {
+        ln: 'WaterVaporSensorPropertyType',
+        tn: 'waterVaporSensorPropertyType',
+        ps: [{
+            n: 'waterVaporSensor',
+            rq: true,
+            en: 'WaterVaporSensor',
+            ti: '.WaterVaporSensorType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TransformedMeasurementType',
+        tn: 'transformedMeasurementType',
+        ps: [{
+            n: 'abstractMeasurement',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMeasurement',
+            ti: 'GML_3_2_1.AbstractFeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GeodesyMLPropertyType',
+        ps: [{
+            n: 'geodesyML',
+            rq: true,
+            en: 'GeodesyML',
+            ti: '.GeodesyMLType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'MonumentPropertyType',
         ps: [{
             n: 'monument',
             rq: true,
             en: 'Monument',
             ti: '.MonumentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DInSARWrappedType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'captureSystem',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'mFrame',
+            rq: true,
+            ti: 'Decimal'
+          }, {
+            n: 'sFrame',
+            rq: true,
+            ti: 'Decimal'
+          }, {
+            n: 'temporalBaseline',
+            rq: true,
+            ti: 'Decimal'
+          }, {
+            n: 'perpendicularBaseline',
+            rq: true,
+            ti: '.ValueType'
+          }, {
+            n: 'track',
+            rq: true,
+            ti: 'Integer'
+          }, {
+            n: 'heading',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'polarity',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'centre',
+            rq: true,
+            ti: '.ValueType'
+          }, {
+            n: 'lookAngle',
+            rq: true,
+            ti: '.ValueType'
+          }, {
+            n: 'imageFormat',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'rectifiedGridCoverage',
+            en: {
+              lp: 'RectifiedGridCoverage',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.DiscreteCoverageType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PositionTimeSliceType',
+        bti: 'GML_3_2_1.AbstractGeometricPrimitiveType',
+        ps: [{
+            n: 'status',
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'coordinates',
+            rq: true,
+            ti: 'GML_3_2_1.DirectPositionType'
+          }, {
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
+          }, {
+            n: 'dataSource',
+            en: {
+              lp: 'dataSource',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.StringOrRefType'
+          }, {
+            n: 'hasVelocity',
+            ti: '.PositionTimeSliceType.HasVelocity'
+          }, {
+            n: 'abstractQuality',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'source',
+            ti: '.AbstractPositionSourcePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'FeatureStatusType.History',
+        tn: null,
+        ps: [{
+            n: 'statusInstance',
+            rq: true,
+            col: true,
+            en: 'StatusInstance',
+            ti: '.FeatureStatusInstanceType'
+          }]
+      }, {
+        ln: 'EllipsoidHeightType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'ellipsoidHeight',
+            rq: true,
+            ti: '.MeasurementPointType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultipathSourcePropertyType',
+        tn: 'multipathSourcePropertyType',
+        ps: [{
+            n: 'multipathSource',
+            rq: true,
+            en: 'MultipathSource',
+            ti: '.BasePossibleProblemSourceType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodeticMonumentPropertyType',
+        tn: 'geodeticMonumentPropertyType',
+        ps: [{
+            n: 'geodeticMonument',
+            rq: true,
+            ti: '.BaseGeodeticMonumentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EllipsoidArcDistanceType',
+        bti: '.EllipsoidChordDistanceType'
+      }, {
+        ln: 'IgsReceiverModelCodeType',
+        tn: 'igsReceiverModelCodeType',
+        bti: 'ISO19139_GCO_20070417.CodeListValueType'
+      }, {
+        ln: 'AnyResultType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'value',
+            ti: 'AnyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ZenithDistanceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'zenithDistance',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }]
+      }, {
+        ln: 'SetupPropertyType',
+        ps: [{
+            n: 'setup',
+            rq: true,
+            en: 'Setup',
+            ti: '.SetupType'
           }, {
             n: 'nilReason',
             ti: {
@@ -5358,64 +5016,15 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EllipsoidHeightType',
-        bti: '.AbstractMeasurementType',
+        ln: 'InstrumentPropertyType',
         ps: [{
-            n: 'ellipsoidHeight',
+            n: 'instrument',
             rq: true,
-            ti: '.MeasurementPointType'
-          }, {
-            n: 'srsName',
-            rq: true,
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OtherInstrumentationPropertyType',
-        tn: 'otherInstrumentationPropertyType',
-        ps: [{
-            n: 'otherInstrumentation',
-            rq: true,
-            en: 'OtherInstrumentation',
-            ti: '.OtherInstrumentationType'
-          }, {
-            n: 'dateInserted',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateDeleted',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'deletedReason'
+            mx: false,
+            dom: false,
+            en: 'Instrument',
+            ti: '.InstrumentType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -5458,193 +5067,12 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractDefinitionOperationType',
-        bti: 'GML_3_2_1.IdentifiedObjectType'
-      }, {
-        ln: 'MonumentType',
-        bti: '.AbstractMonumentType',
+        ln: 'SupplementaryMarkPropertyType',
         ps: [{
-            n: 'inscription',
-            rq: true
-          }, {
-            n: 'monumentDescription',
+            n: 'supplementaryMark',
             rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'height',
-            rq: true,
-            ti: '.SingleValueType'
-          }, {
-            n: 'foundation',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'foundationDepth',
-            rq: true,
-            ti: '.SingleValueType'
-          }, {
-            n: 'markerDescription',
-            rq: true
-          }, {
-            n: 'geologicCharacteristic',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'bedrockType',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'bedrockCondition',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'fractureSpacing',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'faultZonesNearby',
-            rq: true,
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }, {
-            n: 'distanceActivity',
-            ti: 'GML_3_2_1.CodeWithAuthorityType'
-          }]
-      }, {
-        ln: 'GnssReceiverType',
-        bti: '.AbstractGNSSReceiverType',
-        ps: [{
-            n: 'satelliteSystem',
-            rq: true,
-            col: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'firmwareVersion',
-            rq: true
-          }, {
-            n: 'elevationCutoffSetting',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'dateInstalled',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'dateRemoved',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'temperatureStabilization',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'PositionSourceType',
-        bti: '.AbstractPositionSourceType',
-        ps: [{
-            n: 'estimationType',
-            en: 'EstimationType',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'version'
-          }, {
-            n: 'epoch',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'status',
-            en: 'Status',
-            ti: '.FeatureStatusType'
-          }, {
-            n: 'configureValue',
-            mno: 0,
-            col: true,
-            ti: '.ValueType'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BaseSensorEquipmentType',
-        bti: '.SensorWithCodeType',
-        ps: [{
-            n: 'manufacturer',
-            rq: true
-          }, {
-            n: 'serialNumber',
-            rq: true
-          }, {
-            n: 'heightDiffToAntenna',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'calibrationDate',
-            rq: true,
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'validTime',
-            rq: true,
-            en: {
-              lp: 'validTime',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }]
-      }, {
-        ln: 'TransformationMeasurementType',
-        tn: 'transformationMeasurementType',
-        ps: [{
-            n: 'abstractMeasurement',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMeasurement',
-            ti: 'GML_3_2_1.AbstractFeatureType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'PositionPropertyType',
-        ps: [{
-            n: 'position',
-            rq: true,
-            en: 'Position',
-            ti: '.PositionType'
-          }, {
-            n: 'positionTimeSeries',
-            en: 'PositionTimeSeries',
-            ti: '.PositionTimeSeriesType'
-          }, {
-            n: 'timeSlice',
-            rq: true,
-            en: 'TimeSlice',
-            ti: 'GML_3_2_1.ReferenceType'
+            en: 'SupplementaryMark',
+            ti: '.SupplementaryMarkType'
           }, {
             n: 'nilReason',
             ti: {
@@ -5687,76 +5115,16 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OtherInstrumentationType',
-        bti: '.InstrumentType',
+        ln: 'CartesianPosition',
+        tn: 'cartesianPosition',
         ps: [{
-            n: 'instrumentation',
-            rq: true
-          }, {
-            n: 'validTime',
+            n: 'point',
             rq: true,
             en: {
-              lp: 'validTime',
+              lp: 'Point',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            ti: 'GML_3_2_1.TimePrimitivePropertyType'
-          }]
-      }, {
-        ln: 'GeodeticLatitudeType',
-        bti: '.AstronomicLatitudeType'
-      }, {
-        ln: 'AdjustmentPositionType',
-        tn: 'adjustmentPositionType',
-        ps: [{
-            n: 'usesPosition',
-            rq: true,
-            ti: '.PositionPropertyType'
-          }, {
-            n: 'abstractQuality',
-            mx: false,
-            dom: false,
-            en: 'AbstractQuality',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'notes'
-          }, {
-            n: 'associatedDocument',
-            mno: 0,
-            col: true,
-            ti: '.DocumentPropertyType'
-          }, {
-            n: 'extension',
-            ti: 'AnyType'
-          }, {
-            n: 'constraint',
-            an: {
-              lp: 'constraint'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectionSetType',
-        bti: '.AbstractMeasurementType',
-        ps: [{
-            n: 'direction',
-            rq: true,
-            col: true,
-            ti: '.MeasurementLineType'
-          }, {
-            n: 'directionPairQuality',
-            mno: 0,
-            col: true,
-            ti: '.MeasurementLineCovarianceType'
-          }]
-      }, {
-        ln: 'TransformationPositionType',
-        tn: 'transformationPositionType',
-        ps: [{
-            n: 'position',
-            rq: true,
-            en: 'Position',
-            ti: '.PositionType'
+            ti: 'GML_3_2_1.PointType'
           }]
       }, {
         ln: 'TemperatureSensorPropertyType',
@@ -5817,79 +5185,43 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProjectPropertyType',
+        ln: 'DocumentType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'project',
-            rq: true,
-            en: 'Project',
-            ti: '.ProjectType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
             n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
           }, {
-            n: 'href',
-            t: 'a'
+            n: 'createdDate',
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'role',
-            t: 'a'
+            n: 'receivedDate',
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'arcrole',
-            t: 'a'
+            n: 'custodian',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
           }, {
-            n: 'title',
-            t: 'a'
+            n: 'remarks'
           }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'body',
+            ti: '.DocumentType.Body'
           }]
       }, {
-        ln: 'AdjustedMeasurementType',
-        tn: 'adjustedMeasurementType',
+        ln: 'GnssRadomeType',
+        bti: '.BaseGeodeticEquipmentType',
         ps: [{
-            n: 'atLine',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'atPoint',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'adjustmentValue',
-            rq: true,
-            col: true,
-            ti: '.ValueType'
+            n: 'igsModelCode',
+            ti: '.IgsRadomeModelCodeType'
           }]
       }, {
-        ln: 'ObservationQualityPropertyType',
+        ln: 'AbstractSourcePropertyType',
         ps: [{
-            n: 'abstractObservationQuality',
+            n: 'abstractSource',
             rq: true,
             mx: false,
             dom: false,
-            en: 'AbstractObservationQuality',
-            ti: '.AbstractObservationQualityType',
+            en: 'AbstractSource',
+            ti: '.AbstractSourceType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -5933,99 +5265,206 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSourceType.Operands',
-        tn: null,
+        ln: 'WaterVaporSensorType',
+        bti: '.BaseSensorEquipmentType',
         ps: [{
-            n: 'abstractOperand',
+            n: 'distanceToAntenna',
             rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractOperand',
-            ti: 'AnyType',
-            t: 'er'
+            ti: 'Double'
           }]
       }, {
-        ln: 'GnssReceiverConfigType',
-        tn: 'gnssReceiverConfigType',
+        ln: 'PressureSensorType',
+        bti: '.BaseSensorEquipmentType',
         ps: [{
-            n: 'satelliteSystemOrFirmwareVersionOrElevationCutoff',
-            mno: 0,
-            mxo: 6,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'temperatureStabilization'
-              }, {
-                en: 'satelliteSystem',
-                ti: 'GML_3_2_1.CodeListType'
-              }, {
-                en: 'firmwareVersion'
-              }, {
-                en: 'sampleIntervalInSeconds',
-                ti: 'Decimal'
-              }, {
-                en: 'elevationCutoff'
-              }, {
-                en: 'nativeBaudRateInBPS',
-                ti: 'Decimal'
-              }],
-            t: 'ers'
+            n: 'dataSamplingInterval',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'accuracyHPa',
+            rq: true,
+            en: 'accuracy-hPa',
+            ti: 'Double'
           }]
       }, {
-        ln: 'DocumentType.Body',
-        tn: null,
+        ln: 'CollocationInformationPropertyType',
+        tn: 'collocationInformationPropertyType',
         ps: [{
-            n: 'fileReference',
+            n: 'collocationInformation',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            en: 'CollocationInformation',
+            ti: '.CollocationInformationType'
           }, {
-            n: 'content',
+            n: 'dateInserted',
             rq: true,
-            ti: '.DocumentType.Body.Content'
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'any',
-            rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
           }, {
-            n: 'format',
-            an: {
-              lp: 'format'
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'BaseGeodeticEquipmentType',
-        tn: 'baseGeodeticEquipmentType',
+        ln: 'OtherInstrumentationType',
         bti: '.InstrumentType',
         ps: [{
-            n: 'manufacturerName'
-          }, {
-            n: 'manufacturerModel'
-          }, {
-            n: 'manufacturerPartNumber'
-          }, {
-            n: 'manufacturerDescription'
-          }, {
-            n: 'manufacturerSerialNumber',
+            n: 'instrumentation',
             rq: true
+          }, {
+            n: 'validTime',
+            rq: true,
+            en: {
+              lp: 'validTime',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePrimitivePropertyType'
           }]
       }, {
-        ln: 'GNSSPointClusterType',
+        ln: 'GnssAntennaType',
+        bti: '.AbstractGNSSAntennaType',
+        ps: [{
+            n: 'antennaReferencePoint',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'markerArpUpEcc',
+            rq: true,
+            en: 'marker-arpUpEcc.',
+            ti: 'Double'
+          }, {
+            n: 'markerArpNorthEcc',
+            rq: true,
+            en: 'marker-arpNorthEcc.',
+            ti: 'Double'
+          }, {
+            n: 'markerArpEastEcc',
+            rq: true,
+            en: 'marker-arpEastEcc.',
+            ti: 'Double'
+          }, {
+            n: 'alignmentFromTrueNorth',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'antennaRadomeType',
+            rq: true,
+            ti: '.IgsRadomeModelCodeType'
+          }, {
+            n: 'radomeSerialNumber',
+            rq: true
+          }, {
+            n: 'antennaCableType',
+            rq: true
+          }, {
+            n: 'antennaCableLength',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'dateInstalled',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateRemoved',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }]
+      }, {
+        ln: 'DefinitionOperationPropertyType',
+        ps: [{
+            n: 'abstractDefinitionOperation',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDefinitionOperation',
+            ti: '.AbstractDefinitionOperationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AstronomicLongitudeType',
         bti: '.AbstractMeasurementType',
         ps: [{
-            n: 'point',
+            n: 'longitude',
             rq: true,
-            col: true,
             ti: '.MeasurementPointType'
-          }, {
-            n: 'pointPairQuality',
-            mno: 0,
-            col: true,
-            ti: '.MeasurementPointCovarianceType'
           }, {
             n: 'srsName',
             rq: true,
@@ -6062,60 +5501,563 @@ var GEODESYML_0_4_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EllipsoidArcDistanceType',
-        bti: '.EllipsoidChordDistanceType'
+        ln: 'ProjectType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'status',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'managedBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'specifiedBy',
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'initiatedDate',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'completedDate',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'GeodeticMonumentFoundationTypeOfType',
-        vs: ['roof', 'concrete block', 'steel rods']
+        ln: 'MeasurementPointType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'atSetup',
+            rq: true,
+            ti: '.SetupPropertyType'
+          }, {
+            n: 'atNode',
+            rq: true,
+            ti: '.NodePropertyType'
+          }, {
+            n: 'atHeight',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'value',
+            rq: true,
+            ti: '.MeasurementPointType.Value'
+          }, {
+            n: 'abstractQuality',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractQuality',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'SatelliteSystemTypeOfType',
-        vs: ['n\/a', 'GPS', 'GLONASS', 'GPS+GLONASS']
+        ln: 'AbstractDefinitionOperationType',
+        bti: 'GML_3_2_1.IdentifiedObjectType'
       }, {
-        t: 'enum',
-        ln: 'GeologicCharacteristicType',
-        vs: ['BEDROCK', 'Bedrock', 'CLAY', 'Clay', 'GRAVEL', 'Gravel', 'SAND', 'Sand', 'SEDIMENTS', 'Sediments', 'CONGLOMERATE', 'Conglomerate', '']
+        ln: 'AbstractSourceType.Operands',
+        tn: null,
+        ps: [{
+            n: 'abstractOperand',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractOperand',
+            ti: 'AnyType',
+            t: 'er'
+          }]
       }, {
-        t: 'enum',
-        ln: 'FractureSpacingTypeOfType',
-        vs: ['1-10cm', '11-50cm', '51-200cm', 'over 200cm', 'N\/A', '']
+        ln: 'MeasurementType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'type',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'measurementLine',
+            mno: 0,
+            col: true,
+            en: 'MeasurementLine',
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'linePairQuality',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementLineCovarianceType'
+          }, {
+            n: 'measurementPoint',
+            mno: 0,
+            col: true,
+            en: 'MeasurementPoint',
+            ti: '.MeasurementPointType'
+          }, {
+            n: 'pointPairQuality',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementPointCovarianceType'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'BedrockConditionsType',
-        vs: ['FRESH', 'Fresh', 'JOINTED', 'Jointed', 'FRACTURED', 'Fractured', 'WEATHERED', 'Weathered', 'N\/A', '']
+        ln: 'GNSSBaselineReductionType',
+        bti: '.AbstractMeasurementSourceType',
+        ps: [{
+            n: 'rest',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'status',
+                ti: 'GML_3_2_1.CodeType'
+              }, {
+                en: 'associatedDocument',
+                ti: '.DocumentPropertyType'
+              }, {
+                en: 'configureValue',
+                ti: '.ValueType'
+              }, {
+                en: 'extension',
+                ti: 'AnyType'
+              }, {
+                en: 'version'
+              }, {
+                en: 'notes'
+              }],
+            t: 'ers'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'DescriptiveQualityType',
-        vs: ['Unknown', 'Approximate']
+        ln: 'OrthometricHeightDifferenceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'heightDifference',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'PositionDimensionEnumeration',
-        vs: ['1', '2', '3', '4']
+        ln: 'AdjustmentMeasurementType',
+        tn: 'adjustmentMeasurementType',
+        ps: [{
+            n: 'usesMeasurement',
+            rq: true,
+            ti: '.AbstractMeasurementPropertyType'
+          }, {
+            n: 'aprioriScalar',
+            mno: 0,
+            col: true,
+            ti: '.ValueType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'include',
+            ti: 'Boolean',
+            an: {
+              lp: 'include'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'BaseLocalInterferenceType',
-        vs: ['TV', 'CELL PHONE', 'ANTENNA', 'RADAR', 'METAL ROOF', 'DOME', 'VLBI ANTENNA', 'TREES', 'BUILDINGS']
+        ln: 'HeightDifferenceType',
+        bti: '.AbstractMeasurementType',
+        ps: [{
+            n: 'heightDifference',
+            rq: true,
+            ti: '.MeasurementLineType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'GeodeticMonumentTypeOfType',
-        vs: ['pillar', 'brass plate', 'steel mast', 'shallow rod \/ braced antenna mount', 'removeable tripod \/ concrete pad', 'Wyatt\/Agnew drilled-braced', 'Wyatt\/Agnew driven braced', 'rock-pin\/metal-tripod', 'rock-pin', 'glued-rod', 'wall']
+        ln: 'IgsAntennaModelCodeType',
+        tn: 'igsAntennaModelCodeType',
+        bti: 'ISO19139_GCO_20070417.CodeListValueType'
       }, {
-        t: 'enum',
-        ln: 'ConfidenceTypeEnumeration',
-        vs: ['1 sigma', '2 sigma', '3 sigma', '39.4%', '86.5%', '95%', '98.9%', 'unknown']
+        ln: 'PositionTimeSeriesType',
+        bti: '.DynamicFeatureType',
+        ps: [{
+            n: 'atNode',
+            rq: true,
+            ti: '.NodePropertyType'
+          }, {
+            n: 'status',
+            rq: true,
+            en: 'Status',
+            ti: '.FeatureStatusType'
+          }, {
+            n: 'source',
+            ti: '.AbstractPositionSourcePropertyType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'srsName',
+            rq: true,
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'TectonicPlateTypeOfTypes',
-        vs: ['African', 'African Indian\/Australia', 'African Eurasian', 'Antarctic', 'Arabian', 'Caribbean', 'Cocos', 'Eurasian', 'Indian\/Australian', 'Nazca', 'North America', 'North America Pacific', 'Pacific', 'Phillipine', 'South American', 'South American African', 'Juan De Fuca', 'Scotia']
+        ln: 'SiteLocationType.ApproximatePositionITRF',
+        tn: null,
+        ps: [{
+            n: 'cartesianPosition',
+            ti: '.CartesianPosition'
+          }, {
+            n: 'geodeticPosition',
+            ti: '.GeodeticPosition'
+          }]
       }, {
-        t: 'enum',
-        ln: 'InstrumentationTypeOfType',
-        vs: ['Absolute Gravimeter', 'Circumzenithal VUGTK', 'DORIS', 'DORIS\/SLR', 'DORIS\/SLR\/VLBI', 'Earth Tide Gravimeter', 'GLONASS receiver', 'WLRS', 'PRARE', 'Radio Telescope', 'SATREF', 'Siesmometer', 'SLP', 'Satellite Laser Ranging', 'SLR\/VLBI', 'Very Large Baseline Interferometry', 'Superconducting Gravimeter', 'Transportable Integrated Geodetic Observatory', 'Tidal Gravimeter', 'Very Broad Band Seismograph', 'Campaign Mode GPS', 'Continuously Operating GPS', 'Transit', 'Not Available\/unknown', '']
+        ln: 'PositionPropertyType',
+        ps: [{
+            n: 'position',
+            rq: true,
+            en: 'Position',
+            ti: '.PositionType'
+          }, {
+            n: 'positionTimeSeries',
+            en: 'PositionTimeSeries',
+            ti: '.PositionTimeSeriesType'
+          }, {
+            n: 'timeSlice',
+            rq: true,
+            en: 'TimeSlice',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'BedrockTypeOfType',
-        vs: ['IGNEOUS', 'Igneous', 'Metaigneous', 'METAMORPHIC', 'Metamorphic', 'GRANITE', 'Granite', 'SEDIMENTARY', 'Sedimentary', 'CONGLOMERATE', 'Conglomerate', 'N\/A', '']
+        ln: 'SiteStreamType',
+        tn: 'siteStreamType',
+        ps: [{
+            n: 'agency',
+            ti: '.AgencyPropertyType'
+          }, {
+            n: 'dataStream',
+            ti: '.BaseDataStreamType'
+          }]
+      }, {
+        ln: 'MeasurementLineType.Value',
+        tn: null,
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NtripMountType',
+        tn: 'ntripMountType',
+        ps: [{
+            n: 'mountPoint',
+            ti: 'Token'
+          }, {
+            n: 'sourceID'
+          }, {
+            n: 'countryCode',
+            ti: 'Token'
+          }, {
+            n: 'network',
+            ti: 'Token'
+          }, {
+            n: 'allowConnections',
+            ti: 'Boolean'
+          }, {
+            n: 'requireAuthentication',
+            ti: 'Boolean'
+          }, {
+            n: 'encryption',
+            ti: 'Boolean'
+          }, {
+            n: 'feesApply',
+            ti: 'Boolean'
+          }, {
+            n: 'bitrate',
+            ti: 'Double'
+          }, {
+            n: 'carrierPhase',
+            ti: 'Token'
+          }, {
+            n: 'navSystem',
+            ti: 'Token'
+          }, {
+            n: 'nmea'
+          }, {
+            n: 'solution'
+          }]
+      }, {
+        ln: 'FrequencyStandardPropertyType',
+        tn: 'frequencyStandardPropertyType',
+        ps: [{
+            n: 'frequencyStandard',
+            rq: true,
+            en: 'FrequencyStandard',
+            ti: '.FrequencyStandardType'
+          }, {
+            n: 'notes'
+          }, {
+            n: 'associatedDocument',
+            mno: 0,
+            col: true,
+            ti: '.DocumentPropertyType'
+          }, {
+            n: 'extension',
+            ti: 'AnyType'
+          }, {
+            n: 'dateInserted',
+            rq: true,
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'dateDeleted',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'deletedReason'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
         t: 'enum',
         ln: 'EncodingType',
@@ -6126,8 +6068,16 @@ var GEODESYML_0_4_Module_Factory = function () {
         vs: ['BPA', 'BCR', 'BGP', 'TPA', 'TCR', 'TGR']
       }, {
         t: 'enum',
-        ln: 'StandardTypeOfType',
-        vs: ['none', 'H-MASER', 'CESIUM', 'QUARTZ', 'INTERNAL', 'RUBIDIUM', '']
+        ln: 'NodeConstraintEnumeration',
+        vs: ['Free', 'Constrained', 'Constrained Vertical', 'Constrained Horizontal']
+      }, {
+        t: 'enum',
+        ln: 'BedrockTypeOfType',
+        vs: ['IGNEOUS', 'Igneous', 'Metaigneous', 'METAMORPHIC', 'Metamorphic', 'GRANITE', 'Granite', 'SEDIMENTARY', 'Sedimentary', 'CONGLOMERATE', 'Conglomerate', 'N\/A', '']
+      }, {
+        t: 'enum',
+        ln: 'GeodeticMonumentFoundationTypeOfType',
+        vs: ['roof', 'concrete block', 'steel rods']
       }, {
         t: 'enum',
         ln: 'DataFormatType',
@@ -6135,146 +6085,151 @@ var GEODESYML_0_4_Module_Factory = function () {
         vs: ['RTCM_2', 'RTCM_2.2', 'RTCM_2.3', 'RTCM_3.0', 'RTCM_3.1', 'RYO', 'RYO_1.0', 'RYO_2.0', 'CMR', 'CMR+', 'RAW']
       }, {
         t: 'enum',
+        ln: 'TectonicPlateTypeOfTypes',
+        vs: ['African', 'African Indian\/Australia', 'African Eurasian', 'Antarctic', 'Arabian', 'Caribbean', 'Cocos', 'Eurasian', 'Indian\/Australian', 'Nazca', 'North America', 'North America Pacific', 'Pacific', 'Phillipine', 'South American', 'South American African', 'Juan De Fuca', 'Scotia']
+      }, {
+        t: 'enum',
         ln: 'MonumentDescriptionTypeOfType',
         vs: ['pillar', 'brass plate', 'steel mast', 'shallow rod\/braced antenna mount', 'removeable tripod \/ concrete pad', 'Wyatt\/Agnew drilled-braced', 'Wyatt\/Agnew driven braced', 'rock-pin\/metal-tripod', 'rock-pin', 'glued-rod', 'wall']
+      }, {
+        t: 'enum',
+        ln: 'PositionDimensionEnumeration',
+        vs: ['1', '2', '3', '4']
+      }, {
+        t: 'enum',
+        ln: 'DescriptiveQualityType',
+        vs: ['Unknown', 'Approximate']
+      }, {
+        t: 'enum',
+        ln: 'InstrumentationTypeOfType',
+        vs: ['Absolute Gravimeter', 'Circumzenithal VUGTK', 'DORIS', 'DORIS\/SLR', 'DORIS\/SLR\/VLBI', 'Earth Tide Gravimeter', 'GLONASS receiver', 'WLRS', 'PRARE', 'Radio Telescope', 'SATREF', 'Siesmometer', 'SLP', 'Satellite Laser Ranging', 'SLR\/VLBI', 'Very Large Baseline Interferometry', 'Superconducting Gravimeter', 'Transportable Integrated Geodetic Observatory', 'Tidal Gravimeter', 'Very Broad Band Seismograph', 'Campaign Mode GPS', 'Continuously Operating GPS', 'Transit', 'Not Available\/unknown', '']
+      }, {
+        t: 'enum',
+        ln: 'StandardTypeOfType',
+        vs: ['none', 'H-MASER', 'CESIUM', 'QUARTZ', 'INTERNAL', 'RUBIDIUM', '']
       }, {
         t: 'enum',
         ln: 'FaultZonesNearbyType',
         vs: ['Yes', 'No', 'Name_of_Zone', '']
       }, {
         t: 'enum',
+        ln: 'BedrockConditionsType',
+        vs: ['FRESH', 'Fresh', 'JOINTED', 'Jointed', 'FRACTURED', 'Fractured', 'WEATHERED', 'Weathered', 'N\/A', '']
+      }, {
+        t: 'enum',
+        ln: 'ConfidenceTypeEnumeration',
+        vs: ['1 sigma', '2 sigma', '3 sigma', '39.4%', '86.5%', '95%', '98.9%', 'unknown']
+      }, {
+        t: 'enum',
         ln: 'StatusType',
         vs: ['n\/a', 'ACTIVE', 'MOBILE', 'PERMANENT', 'REMOVED', '']
       }, {
         t: 'enum',
-        ln: 'NodeConstraintEnumeration',
-        vs: ['Free', 'Constrained', 'Constrained Vertical', 'Constrained Horizontal']
+        ln: 'BaseLocalInterferenceType',
+        vs: ['TV', 'CELL PHONE', 'ANTENNA', 'RADAR', 'METAL ROOF', 'DOME', 'VLBI ANTENNA', 'TREES', 'BUILDINGS']
+      }, {
+        t: 'enum',
+        ln: 'GeologicCharacteristicType',
+        vs: ['BEDROCK', 'Bedrock', 'CLAY', 'Clay', 'GRAVEL', 'Gravel', 'SAND', 'Sand', 'SEDIMENTS', 'Sediments', 'CONGLOMERATE', 'Conglomerate', '']
+      }, {
+        t: 'enum',
+        ln: 'GeodeticMonumentTypeOfType',
+        vs: ['pillar', 'brass plate', 'steel mast', 'shallow rod \/ braced antenna mount', 'removeable tripod \/ concrete pad', 'Wyatt\/Agnew drilled-braced', 'Wyatt\/Agnew driven braced', 'rock-pin\/metal-tripod', 'rock-pin', 'glued-rod', 'wall']
+      }, {
+        t: 'enum',
+        ln: 'FractureSpacingTypeOfType',
+        vs: ['1-10cm', '11-50cm', '51-200cm', 'over 200cm', 'N\/A', '']
+      }, {
+        t: 'enum',
+        ln: 'SatelliteSystemTypeOfType',
+        vs: ['n\/a', 'GPS', 'GLONASS', 'GPS+GLONASS']
       }],
     eis: [{
         en: 'transformedPosition',
         ti: '.TransformedPositionType',
         sh: 'AbstractResult'
       }, {
-        en: 'AbstractDefinitionEstimator',
-        ti: '.AbstractDefinitionEstimatorType',
-        sh: 'AbstractDefinitionOperation'
-      }, {
-        en: 'AbstractDefinitionOperation',
-        ti: '.AbstractDefinitionOperationType',
-        sh: {
-          lp: 'Definition',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'Setup',
-        ti: '.SetupType',
-        sh: 'DynamicFeature'
-      }, {
-        en: 'AbstractSiteLog',
-        ti: '.AbstractSiteLogType',
+        en: 'SurveyedLocalTie',
+        ti: '.SurveyedLocalTieType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'Site',
-        ti: '.SiteType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'InterpolatedValueSource',
-        ti: '.InterpolatedValueSourceType',
-        sh: 'AbstractSource'
-      }, {
-        en: 'SupplementaryMark',
-        ti: '.SupplementaryMarkType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'AbstractMeasurementOperation',
-        ti: '.AbstractMeasurementOperationType',
-        sh: {
-          lp: 'Definition',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'HorizontalAngle',
-        ti: '.HorizontalAngleType',
+        en: 'GeodeticAzimuth',
+        ti: '.GeodeticAzimuthType',
         sh: 'AbstractMeasurement'
       }, {
-        en: 'Status',
-        ti: '.FeatureStatusType'
+        en: 'DInSARWrapped',
+        ti: '.DInSARWrappedType',
+        sh: 'AbstractMeasurement'
       }, {
-        en: 'associatedDocument',
-        ti: '.DocumentPropertyType',
+        en: 'configureValue',
+        ti: '.ValueType',
         sc: '.GNSSBaselineReductionType'
       }, {
-        en: 'DynamicTransformation',
-        ti: '.DynamicTransformationType',
+        en: 'CollocationInformation',
+        ti: '.CollocationInformationType',
         sh: {
-          lp: 'AbstractGeneralTransformation',
+          lp: 'AbstractGML',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'TemperatureSensor',
-        ti: '.TemperatureSensorType',
-        sh: 'Sensor'
-      }, {
-        en: 'AbstractPositionSource',
-        ti: '.AbstractPositionSourceType',
-        sh: 'AbstractSource'
-      }, {
-        en: 'Project',
-        ti: '.ProjectType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'RadioInterference',
-        ti: '.RadioInterferenceType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'VCV2D',
-        ti: '.VCV2X2Type',
-        sh: 'AbstractQuality'
-      }, {
-        en: 'OrthometricHeight',
-        ti: '.OrthometricHeightType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'transformedMeasurement',
-        ti: '.TransformedMeasurementType',
+        en: 'adjustedPosition',
+        ti: '.AdjustedPositionType',
         sh: 'AbstractResult'
       }, {
-        en: 'geodeticMonument',
-        ti: '.BaseGeodeticMonumentType',
+        en: 'OrthometricHeightDifference',
+        ti: '.OrthometricHeightDifferenceType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'NumericSingleQuality',
+        ti: '.SingleValueType',
+        sh: 'AbstractQuality'
+      }, {
+        en: 'transformationMeasurement',
+        ti: '.TransformationMeasurementType',
+        sh: 'AbstractOperand'
+      }, {
+        en: 'AbstractDefinitionSource',
+        ti: '.AbstractDefinitionSourceType',
+        sh: 'AbstractSource'
+      }, {
+        en: 'AbstractResult',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractMeasurement',
+        ti: 'GML_3_2_1.AbstractFeatureType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'type',
-        ti: 'GML_3_2_1.CodeWithAuthorityType',
-        sc: '.GnssAntennaHeightMeasurementType'
+        en: 'adjustmentValue',
+        ti: '.ValueType',
+        sh: 'AbstractResult'
       }, {
-        en: 'GNSSObservationQualityInstance',
-        ti: '.GNSSObservationQualityInstanceType',
-        sh: 'AbstractTimeSlice'
+        en: 'result',
+        ti: '.AnyResultType',
+        sh: 'AbstractResult'
       }, {
-        en: 'DeformationGridTransformation',
-        ti: '.DeformationGridTransformationType',
-        sh: 'GridTransformation'
+        en: 'adjustedPositionQuality',
+        ti: '.AdjustedPositionQualityType',
+        sh: 'AbstractResult'
       }, {
-        en: 'LocalEpisodicEffect',
-        ti: '.LocalEpisodicEffectType',
+        en: 'notes',
+        sc: '.GNSSBaselineReductionType'
+      }, {
+        en: 'AstronomicLatitude',
+        ti: '.AstronomicLatitudeType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'VerticalAngle',
+        ti: '.VerticalAngleType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'AbstractSource',
+        ti: '.AbstractSourceType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -6287,9 +6242,9 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'PositionEstimatorProcess',
-        ti: '.PositionEstimatorProcessType',
-        sh: 'AbstractPositionEstimator'
+        en: 'HorizontalAngle',
+        ti: '.HorizontalAngleType',
+        sh: 'AbstractMeasurement'
       }, {
         en: 'AbstractTimeSlice',
         ti: '.AbstractTimeSliceType',
@@ -6298,96 +6253,37 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'PressureSensor',
-        ti: '.PressureSensorType',
-        sh: 'Sensor'
-      }, {
-        en: 'temperatureStabilization',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'referencePoint',
+        en: 'type',
         ti: 'GML_3_2_1.CodeWithAuthorityType',
         sc: '.GnssAntennaHeightMeasurementType'
       }, {
-        en: 'CollocationInformation',
-        ti: '.CollocationInformationType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'adjustmentMeasurement',
-        ti: '.AdjustmentMeasurementType',
-        sh: 'AbstractOperand'
-      }, {
-        en: 'SignalObstruction',
-        ti: '.BasePossibleProblemSourceType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'TieMeasurement',
-        ti: '.TieMeasurementType',
+        en: 'GNSSPointCluster',
+        ti: '.GNSSPointClusterType',
         sh: 'AbstractMeasurement'
       }, {
-        en: 'version',
-        sc: '.GNSSBaselineReductionType'
-      }, {
-        en: 'AbstractResult',
-        ti: 'AnyType'
-      }, {
-        en: 'FrequencyStandard',
-        ti: '.FrequencyStandardType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'PositionPairCovariance',
-        ti: '.PositionPairCovarianceType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'AstronomicLatitude',
-        ti: '.AstronomicLatitudeType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'NumericQualityList',
-        ti: '.ValueType',
-        sh: 'AbstractQuality'
-      }, {
-        en: 'SurveyedLocalTie',
-        ti: '.SurveyedLocalTieType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'MeanSeaLevelArcDistance',
-        ti: '.MeanSeaLevelArcDistanceType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'DescriptiveQuality',
-        ti: 'GML_3_2_1.CodeType',
-        sh: 'AbstractQuality'
-      }, {
-        en: 'GNSSBaselineCluster',
-        ti: '.GNSSBaselineClusterType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'status',
-        ti: 'GML_3_2_1.CodeType',
+        en: 'notes',
         sc: '.TransformationType'
       }, {
-        en: 'StatusInstance',
-        ti: '.FeatureStatusInstanceType'
+        en: 'EllipsoidArcDistance',
+        ti: '.EllipsoidArcDistanceType',
+        sh: 'AbstractMeasurement'
       }, {
-        en: 'adjustmentValue',
-        ti: '.ValueType',
-        sh: 'AbstractResult'
+        en: 'dataStream',
+        ti: '.DataStreamType'
+      }, {
+        en: 'AbstractDefinitionOperation',
+        ti: '.AbstractDefinitionOperationType',
+        sh: {
+          lp: 'Definition',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'AbstractMeasurementOperation',
+        ti: '.AbstractMeasurementOperationType',
+        sh: {
+          lp: 'Definition',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }, {
         en: 'AbstractObservationQuality',
         ti: '.AbstractObservationQualityType',
@@ -6396,85 +6292,114 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'status',
-        ti: 'GML_3_2_1.CodeType',
-        sc: '.GNSSBaselineReductionType'
-      }, {
-        en: 'GeodeticAzimuth',
-        ti: '.GeodeticAzimuthType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'adjustedPositionQuality',
-        ti: '.AdjustedPositionQualityType',
-        sh: 'AbstractResult'
-      }, {
-        en: 'Node',
-        ti: '.NodeType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'OtherInstrumentation',
-        ti: '.OtherInstrumentationType',
-        sh: 'Instrument'
-      }, {
-        en: 'EllipsoidChordDistance',
-        ti: '.EllipsoidChordDistanceType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'siteLog',
-        ti: '.SiteLogType',
-        sh: 'AbstractSiteLog'
-      }, {
-        en: 'GnssAntenna',
-        ti: '.GnssAntennaType',
-        sh: 'Instrument'
-      }, {
-        en: 'VCV3D',
-        ti: '.VCV3X3Type',
-        sh: 'AbstractQuality'
-      }, {
-        en: 'transformationPosition',
-        ti: '.TransformationPositionType',
-        sh: 'AbstractOperand'
-      }, {
-        en: 'adjustedMeasurement',
-        ti: '.AdjustedMeasurementType',
-        sh: 'AbstractResult'
+        en: 'associatedDocument',
+        ti: '.DocumentPropertyType',
+        sc: '.TransformationType'
       }, {
         en: 'SiteCertificate',
         ti: '.SiteCertificateType',
         sh: 'Node'
       }, {
-        en: 'AbstractQuality',
-        ti: 'AnyType'
+        en: 'firmwareVersion',
+        sc: '.GnssReceiverConfigType'
       }, {
-        en: 'version',
-        sc: '.TransformationType'
+        en: 'OtherInstrumentation',
+        ti: '.OtherInstrumentationType',
+        sh: 'Instrument'
       }, {
-        en: 'GNSSBaseline',
-        ti: '.GNSSBaselineType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'AbstractMeasurement',
-        ti: 'GML_3_2_1.AbstractFeatureType',
+        en: 'AbstractSiteLog',
+        ti: '.AbstractSiteLogType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'ObservationQualitySource',
-        ti: '.ObservationQualitySourceType',
-        sh: 'AbstractSource'
+        en: 'value',
+        ti: 'Decimal',
+        sc: '.GnssAntennaHeightMeasurementType'
       }, {
-        en: 'NumericSingleQuality',
-        ti: '.SingleValueType',
-        sh: 'AbstractQuality'
+        en: 'OrthometricHeight',
+        ti: '.OrthometricHeightType',
+        sh: 'AbstractMeasurement'
       }, {
-        en: 'AbstractDefinitionSource',
-        ti: '.AbstractDefinitionSourceType',
-        sh: 'AbstractSource'
+        en: 'AstronomicLongitude',
+        ti: '.AstronomicLongitudeType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'PositionPairCovariance',
+        ti: '.PositionPairCovarianceType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'transformedMeasurement',
+        ti: '.TransformedMeasurementType',
+        sh: 'AbstractResult'
+      }, {
+        en: 'satelliteSystem',
+        ti: 'GML_3_2_1.CodeListType',
+        sc: '.GnssReceiverConfigType'
+      }, {
+        en: 'dateAndTimeUTC',
+        ti: 'GML_3_2_1.TimePositionType',
+        sc: '.GnssAntennaHeightMeasurementType'
+      }, {
+        en: 'TerrestrialReferenceFrame',
+        ti: '.TerrestrialReferenceFrameType',
+        sh: {
+          lp: 'GeodeticDatum',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'RadioInterference',
+        ti: '.RadioInterferenceType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'nativeBaudRateInBPS',
+        ti: 'Decimal',
+        sc: '.GnssReceiverConfigType'
+      }, {
+        en: 'operand',
+        ti: '.AnyOperandType',
+        sh: 'AbstractOperand'
+      }, {
+        en: 'AbstractOperand',
+        ti: 'AnyType'
+      }, {
+        en: 'SignalObstruction',
+        ti: '.BasePossibleProblemSourceType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'extension',
+        ti: 'AnyType',
+        sc: '.TransformationType'
+      }, {
+        en: 'adjustedMeasurement',
+        ti: '.AdjustedMeasurementType',
+        sh: 'AbstractResult'
+      }, {
+        en: 'GNSSBaselineCluster',
+        ti: '.GNSSBaselineClusterType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'GridTransformation',
+        ti: '.GridTransformationType',
+        sh: 'DynamicTransformation'
+      }, {
+        en: 'extension',
+        ti: 'AnyType',
+        sc: '.GNSSBaselineReductionType'
+      }, {
+        en: 'SetupInstance',
+        ti: '.SetupInstanceType',
+        sh: 'AbstractTimeSlice'
       }, {
         en: 'InterpolatedDynamicValue',
         ti: '.InterpolatedDynamicValueType',
@@ -6483,31 +6408,245 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'antennaReferencePoint',
-        ti: 'GML_3_2_1.CodeType'
-      }, {
-        en: 'AbstractSource',
-        ti: '.AbstractSourceType',
+        en: 'Node',
+        ti: '.NodeType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
+        en: 'GnssAntenna',
+        ti: '.GnssAntennaType',
+        sh: 'Instrument'
+      }, {
+        en: 'Setup',
+        ti: '.SetupType',
+        sh: 'DynamicFeature'
+      }, {
+        en: 'ReferenceFrameSource',
+        ti: '.ReferenceFrameSourceType',
+        sh: 'AbstractDefinitionSource'
+      }, {
+        en: 'geodeticEquipmentItem',
+        ti: '.BaseGeodeticEquipmentType'
+      }, {
+        en: 'SupplementaryMark',
+        ti: '.SupplementaryMarkType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'PositionSource',
+        ti: '.PositionSourceType',
+        sh: 'AbstractPositionSource'
+      }, {
+        en: 'DeformationGridTransformation',
+        ti: '.DeformationGridTransformationType',
+        sh: 'GridTransformation'
+      }, {
+        en: 'AbstractDefinitionEstimator',
+        ti: '.AbstractDefinitionEstimatorType',
+        sh: 'AbstractDefinitionOperation'
+      }, {
+        en: 'DirectionSet',
+        ti: '.DirectionSetType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'GeodeticLongitude',
+        ti: '.GeodeticLongitudeType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'AbstractMeasurementEstimator',
+        ti: '.AbstractMeasurementEstimatorType',
+        sh: 'AbstractMeasurementOperation'
+      }, {
+        en: 'MeanSeaLevelArcDistance',
+        ti: '.MeanSeaLevelArcDistanceType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'DynamicFeature',
+        ti: '.DynamicFeatureType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'Project',
+        ti: '.ProjectType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'Sensor',
+        ti: '.SensorType',
+        sh: {
+          lp: 'AbstractGML',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'VCV3D',
+        ti: '.VCV3X3Type',
+        sh: 'AbstractQuality'
+      }, {
+        en: 'sampleIntervalInSeconds',
+        ti: 'Decimal',
+        sc: '.GnssReceiverConfigType'
+      }, {
+        en: 'version',
+        sc: '.GNSSBaselineReductionType'
+      }, {
+        en: 'ReductionMethod'
+      }, {
+        en: 'igsRadomeModelCode',
+        ti: '.IgsRadomeModelCodeType'
+      }, {
+        en: 'ObservationQualitySource',
+        ti: '.ObservationQualitySourceType',
+        sh: 'AbstractSource'
+      }, {
         en: 'HeightDifference',
         ti: '.HeightDifferenceType',
         sh: 'AbstractMeasurement'
       }, {
-        en: 'VerticalAngle',
-        ti: '.VerticalAngleType',
-        sh: 'AbstractMeasurement'
+        en: 'referencePoint',
+        ti: 'GML_3_2_1.CodeWithAuthorityType',
+        sc: '.GnssAntennaHeightMeasurementType'
+      }, {
+        en: 'GNSSBaselineReduction',
+        ti: '.GNSSBaselineReductionType',
+        sh: 'AbstractMeasurementSource'
+      }, {
+        en: 'DescriptiveQuality',
+        ti: 'GML_3_2_1.CodeType',
+        sh: 'AbstractQuality'
+      }, {
+        en: 'Instrument',
+        ti: '.InstrumentType',
+        sh: {
+          lp: 'AbstractGML',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'AbstractPositionSource',
+        ti: '.AbstractPositionSourceType',
+        sh: 'AbstractSource'
       }, {
         en: 'Position',
         ti: '.PositionType',
         sh: 'AbstractPosition'
       }, {
-        en: 'adjustedPosition',
-        ti: '.AdjustedPositionType',
-        sh: 'AbstractResult'
+        en: 'StatusInstance',
+        ti: '.FeatureStatusInstanceType'
+      }, {
+        en: 'GNSSObservationQualityInstance',
+        ti: '.GNSSObservationQualityInstanceType',
+        sh: 'AbstractTimeSlice'
+      }, {
+        en: 'status',
+        ti: 'GML_3_2_1.CodeType',
+        sc: '.TransformationType'
+      }, {
+        en: 'Measurement',
+        ti: '.MeasurementType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'transformationPosition',
+        ti: '.TransformationPositionType',
+        sh: 'AbstractOperand'
+      }, {
+        en: 'InterpolatedValueSource',
+        ti: '.InterpolatedValueSourceType',
+        sh: 'AbstractSource'
+      }, {
+        en: 'EllipsoidHeight',
+        ti: '.EllipsoidHeightType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'InterpolatedSingleValue',
+        ti: '.InterpolatedSingleValueType',
+        sh: 'AbstractTimeSlice'
+      }, {
+        en: 'NumericQualityList',
+        ti: '.ValueType',
+        sh: 'AbstractQuality'
+      }, {
+        en: 'AbstractQuality',
+        ti: 'AnyType'
+      }, {
+        en: 'GnssReceiver',
+        ti: '.GnssReceiverType',
+        sh: 'Instrument'
+      }, {
+        en: 'FrequencyStandard',
+        ti: '.FrequencyStandardType',
+        sh: {
+          lp: 'AbstractGML',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'HumiditySensor',
+        ti: '.HumiditySensorType',
+        sh: 'Sensor'
+      }, {
+        en: 'geodeticMonument',
+        ti: '.BaseGeodeticMonumentType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'AbstractMeasurementSource',
+        ti: '.AbstractMeasurementSourceType',
+        sh: 'AbstractSource'
+      }, {
+        en: 'epoch',
+        ti: 'GML_3_2_1.TimePositionType',
+        sc: '.TransformationType'
+      }, {
+        en: 'Monument',
+        ti: '.MonumentType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'AbstractPositionEstimator',
+        ti: '.AbstractPositionEstimatorType',
+        sh: {
+          lp: 'AbstractCoordinateOperation',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'Status',
+        ti: '.FeatureStatusType'
+      }, {
+        en: 'temperatureStabilization',
+        sc: '.GnssReceiverConfigType'
+      }, {
+        en: 'WaterVaporSensor',
+        ti: '.WaterVaporSensorType',
+        sh: 'Sensor'
+      }, {
+        en: 'Transformation',
+        ti: '.TransformationType',
+        sh: 'AbstractPositionSource'
+      }, {
+        en: 'PositionEstimatorProcess',
+        ti: '.PositionEstimatorProcessType',
+        sh: 'AbstractPositionEstimator'
+      }, {
+        en: 'GeodeticLatitude',
+        ti: '.GeodeticLatitudeType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'DynamicTransformation',
+        ti: '.DynamicTransformationType',
+        sh: {
+          lp: 'AbstractGeneralTransformation',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }, {
         en: 'AbstractPosition',
         ti: 'GML_3_2_1.AbstractFeatureType',
@@ -6516,12 +6655,87 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'dateAndTimeUTC',
-        ti: 'GML_3_2_1.TimePositionType',
-        sc: '.GnssAntennaHeightMeasurementType'
+        en: 'adjustmentPosition',
+        ti: '.AdjustmentPositionType',
+        sh: 'AbstractOperand'
       }, {
-        en: 'DynamicFeature',
-        ti: '.DynamicFeatureType',
+        en: 'GnssRadome',
+        ti: '.GnssRadomeType',
+        sh: 'Instrument'
+      }, {
+        en: 'TemperatureSensor',
+        ti: '.TemperatureSensorType',
+        sh: 'Sensor'
+      }, {
+        en: 'antennaReferencePoint',
+        ti: 'GML_3_2_1.CodeType'
+      }, {
+        en: 'TieMeasurement',
+        ti: '.TieMeasurementType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'LocalEpisodicEffect',
+        ti: '.LocalEpisodicEffectType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'status',
+        ti: 'GML_3_2_1.CodeType',
+        sc: '.GNSSBaselineReductionType'
+      }, {
+        en: 'PositionTimeSeries',
+        ti: '.PositionTimeSeriesType',
+        sh: 'AbstractPosition'
+      }, {
+        en: 'AstronomicAzimuth',
+        ti: '.AstronomicAzimuthType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'SlopeDistance',
+        ti: '.SlopeDistanceType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'PressureSensor',
+        ti: '.PressureSensorType',
+        sh: 'Sensor'
+      }, {
+        en: 'version',
+        sc: '.TransformationType'
+      }, {
+        en: 'elevationCutoff',
+        sc: '.GnssReceiverConfigType'
+      }, {
+        en: 'associatedDocument',
+        ti: '.DocumentPropertyType',
+        sc: '.GNSSBaselineReductionType'
+      }, {
+        en: 'EllipsoidChordDistance',
+        ti: '.EllipsoidChordDistanceType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'ZenithDistance',
+        ti: '.ZenithDistanceType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'GNSSObservationQuality',
+        ti: '.GNSSObservationQualityType',
+        sh: 'AbstractObservationQuality'
+      }, {
+        en: 'MultipathSource',
+        ti: '.BasePossibleProblemSourceType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'GNSSBaseline',
+        ti: '.GNSSBaselineType',
+        sh: 'AbstractMeasurement'
+      }, {
+        en: 'GeodesyML',
+        ti: '.GeodesyMLType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -6534,250 +6748,30 @@ var GEODESYML_0_4_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'associatedDocument',
-        ti: '.DocumentPropertyType',
-        sc: '.TransformationType'
+        en: 'VCV2D',
+        ti: '.VCV2X2Type',
+        sh: 'AbstractQuality'
       }, {
-        en: 'HumiditySensor',
-        ti: '.HumiditySensorType',
-        sh: 'Sensor'
-      }, {
-        en: 'PositionTimeSeries',
-        ti: '.PositionTimeSeriesType',
-        sh: 'AbstractPosition'
-      }, {
-        en: 'ReductionMethod'
-      }, {
-        en: 'firmwareVersion',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'nativeBaudRateInBPS',
-        ti: 'Decimal',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'sampleIntervalInSeconds',
-        ti: 'Decimal',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'SetupInstance',
-        ti: '.SetupInstanceType',
-        sh: 'AbstractTimeSlice'
-      }, {
-        en: 'ReferenceFrameSource',
-        ti: '.ReferenceFrameSourceType',
-        sh: 'AbstractDefinitionSource'
-      }, {
-        en: 'AstronomicAzimuth',
-        ti: '.AstronomicAzimuthType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'extension',
-        ti: 'AnyType',
-        sc: '.TransformationType'
-      }, {
-        en: 'igsRadomeModelCode',
-        ti: '.IgsRadomeModelCodeType'
-      }, {
-        en: 'epoch',
-        ti: 'GML_3_2_1.TimePositionType',
-        sc: '.TransformationType'
-      }, {
-        en: 'AbstractMeasurementEstimator',
-        ti: '.AbstractMeasurementEstimatorType',
-        sh: 'AbstractMeasurementOperation'
-      }, {
-        en: 'GNSSPointCluster',
-        ti: '.GNSSPointClusterType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'GridTransformation',
-        ti: '.GridTransformationType',
-        sh: 'DynamicTransformation'
-      }, {
-        en: 'elevationCutoff',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'GNSSObservationQuality',
-        ti: '.GNSSObservationQualityType',
-        sh: 'AbstractObservationQuality'
-      }, {
-        en: 'extension',
-        ti: 'AnyType',
-        sc: '.GNSSBaselineReductionType'
-      }, {
-        en: 'DirectionSet',
-        ti: '.DirectionSetType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'SlopeDistance',
-        ti: '.SlopeDistanceType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'AbstractOperand',
-        ti: 'AnyType'
+        en: 'adjustmentMeasurement',
+        ti: '.AdjustmentMeasurementType',
+        sh: 'AbstractOperand'
       }, {
         en: 'Value',
         ti: '.ValueType'
       }, {
-        en: 'value',
-        ti: 'Decimal',
-        sc: '.GnssAntennaHeightMeasurementType'
-      }, {
-        en: 'notes',
-        sc: '.GNSSBaselineReductionType'
-      }, {
-        en: 'Instrument',
-        ti: '.InstrumentType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'InterpolatedSingleValue',
-        ti: '.InterpolatedSingleValueType',
-        sh: 'AbstractTimeSlice'
-      }, {
-        en: 'GeodesyML',
-        ti: '.GeodesyMLType',
+        en: 'Site',
+        ti: '.SiteType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'GeodeticLatitude',
-        ti: '.GeodeticLatitudeType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'dataStream',
-        ti: '.DataStreamType'
-      }, {
-        en: 'transformationMeasurement',
-        ti: '.TransformationMeasurementType',
-        sh: 'AbstractOperand'
-      }, {
-        en: 'DInSARWrapped',
-        ti: '.DInSARWrappedType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'EllipsoidHeight',
-        ti: '.EllipsoidHeightType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'Measurement',
-        ti: '.MeasurementType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'AbstractMeasurementSource',
-        ti: '.AbstractMeasurementSourceType',
-        sh: 'AbstractSource'
-      }, {
-        en: 'GNSSBaselineReduction',
-        ti: '.GNSSBaselineReductionType',
-        sh: 'AbstractMeasurementSource'
-      }, {
-        en: 'GeodeticLongitude',
-        ti: '.GeodeticLongitudeType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'Sensor',
-        ti: '.SensorType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'TerrestrialReferenceFrame',
-        ti: '.TerrestrialReferenceFrameType',
-        sh: {
-          lp: 'GeodeticDatum',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'WaterVaporSensor',
-        ti: '.WaterVaporSensorType',
-        sh: 'Sensor'
-      }, {
-        en: 'configureValue',
-        ti: '.ValueType',
-        sc: '.GNSSBaselineReductionType'
-      }, {
-        en: 'operand',
-        ti: '.AnyOperandType',
-        sh: 'AbstractOperand'
-      }, {
-        en: 'geodeticEquipmentItem',
-        ti: '.BaseGeodeticEquipmentType'
-      }, {
-        en: 'ZenithDistance',
-        ti: '.ZenithDistanceType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'result',
-        ti: '.AnyResultType',
-        sh: 'AbstractResult'
-      }, {
-        en: 'adjustmentPosition',
-        ti: '.AdjustmentPositionType',
-        sh: 'AbstractOperand'
-      }, {
-        en: 'AbstractPositionEstimator',
-        ti: '.AbstractPositionEstimatorType',
-        sh: {
-          lp: 'AbstractCoordinateOperation',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'Monument',
-        ti: '.MonumentType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'GnssReceiver',
-        ti: '.GnssReceiverType',
-        sh: 'Instrument'
-      }, {
-        en: 'PositionSource',
-        ti: '.PositionSourceType',
-        sh: 'AbstractPositionSource'
-      }, {
-        en: 'AstronomicLongitude',
-        ti: '.AstronomicLongitudeType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'notes',
-        sc: '.TransformationType'
-      }, {
-        en: 'Transformation',
-        ti: '.TransformationType',
-        sh: 'AbstractPositionSource'
+        en: 'siteLog',
+        ti: '.SiteLogType',
+        sh: 'AbstractSiteLog'
       }, {
         en: 'PositionTimeSlice',
         ti: '.PositionTimeSliceType'
-      }, {
-        en: 'GnssRadome',
-        ti: '.GnssRadomeType',
-        sh: 'Instrument'
-      }, {
-        en: 'MultipathSource',
-        ti: '.BasePossibleProblemSourceType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'satelliteSystem',
-        ti: 'GML_3_2_1.CodeListType',
-        sc: '.GnssReceiverConfigType'
-      }, {
-        en: 'EllipsoidArcDistance',
-        ti: '.EllipsoidArcDistanceType',
-        sh: 'AbstractMeasurement'
-      }, {
-        en: 'OrthometricHeightDifference',
-        ti: '.OrthometricHeightDifferenceType',
-        sh: 'AbstractMeasurement'
       }]
   };
   return {
