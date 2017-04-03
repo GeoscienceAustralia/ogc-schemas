@@ -41,7 +41,7 @@ import org.apache.commons.lang3.StringUtils;
  * }
  * </pre>
 
- * @see resource geodesyml-v_0_3.xjb
+ * @see resource geodesyml-v_0_4.xjb
  */
 public interface GMLPropertyType {
 

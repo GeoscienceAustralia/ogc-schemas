@@ -60,7 +60,7 @@
 	<modules>
         <module>schemas</module>
         <module>schema-parent</module>
-        <module>geodesyml/0.3</module>
+        <module>geodesyml/0.4</module>
         <module>scripts</module>
 	</modules>
 	<profiles>

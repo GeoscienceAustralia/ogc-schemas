@@ -60,7 +60,7 @@
 							<artifactItems>
 								<artifactItem>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>geodesyml-v_0_3</artifactId>
+                                    <artifactId>geodesyml-v_0_4</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>scripts</classifier>
                                     <type>zip</type></artifactItem>
@@ -79,7 +79,7 @@
 							<artifactItems>
 								<artifactItem>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>geodesyml-v_0_3</artifactId>
+                                    <artifactId>geodesyml-v_0_4</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>jsonschemas</classifier>
                                     <type>zip</type></artifactItem>
@@ -134,6 +134,20 @@
 							</arguments>
 						</configuration>
 					</execution>
+                    <execution>
+                        <id>pack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>pack</argument>
+                                <argument>.</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>					
 				</executions>
 			</plugin>
 		</plugins>

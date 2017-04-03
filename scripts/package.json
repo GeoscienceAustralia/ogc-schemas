@@ -1,5 +1,5 @@
 {
-	"name": "ogc-schemas",
+	"name": "ogc-schemas-ga",
 	"publishConfig": {
 		"registry": "https://nexus.gadevs.ga./repository/npm-snapshot/"
 	},
