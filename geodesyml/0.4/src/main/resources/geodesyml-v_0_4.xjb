@@ -76,7 +76,7 @@
             </jaxb:property>
         </jaxb:bindings>
         <jaxb:bindings multiple="true" node="//xs:complexType[substring(@name, string-length(@name) - string-length('PropertyType') + 1) = 'PropertyType']">
-            <inheritance:implements>au.gov.ga.geodesy.support.gml.GMLPropertyType</inheritance:implements>
+            <inheritance:implements>au.gov.ga.geodesy.support.gml.LogItemPropertyType</inheritance:implements>
         </jaxb:bindings>
     </jaxb:bindings>
 
@@ -88,7 +88,7 @@
 
     <jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.4/localInterferences.xsd" node="/xs:schema">
         <jaxb:bindings multiple="true" node="//xs:complexType[substring(@name, string-length(@name) - string-length('PropertyType') + 1) = 'PropertyType']">
-            <inheritance:implements>au.gov.ga.geodesy.support.gml.GMLPropertyType</inheritance:implements>
+            <inheritance:implements>au.gov.ga.geodesy.support.gml.LogItemPropertyType</inheritance:implements>
         </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>
